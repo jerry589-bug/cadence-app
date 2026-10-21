@@ -1,0 +1,21 @@
+{
+  "name": "cadence-editorial-humanizer",
+  "version": "4.1.0",
+  "description": "Content-preserving AI writing humanizer and editorial revision studio",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static HTML build ready'"
+  },
+  "keywords": [
+    "writing",
+    "editorial",
+    "humanizer",
+    "anti-detector",
+    "grammarly-resistant",
+    "burstiness",
+    "stylometrics"
+  ],
+  "author": "Cadence Studio Team",
+  "license": "MIT"
+}
