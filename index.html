@@ -260,8 +260,9 @@
             <option value="gemini">✨ Google Gemini Free — Gemini-2.5-Flash (Free Key · 1,500/day · No Card)</option>
             <option value="openrouter">🔓 OpenRouter Free — Llama-3.3-70B:free (Free Key · No Credit Card)</option>
           </select>
-          <div id="studioApiKeyWrap" class="hidden flex items-center gap-1.5 flex-1 min-w-[220px]">
-            <input id="studioApiKey" type="password" placeholder="Paste free Groq (gsk_...) or Gemini (AIza...) key" class="flex-1 rounded-md border border-[#E2DBD0] bg-white px-2.5 py-1 text-xs font-mono-code text-[#1E1C1A] focus:border-[#B85233] focus:outline-none" />
+          <div id="studioApiKeyWrap" class="flex items-center gap-2 flex-1 min-w-[280px]">
+            <span class="text-xs font-semibold text-[#B85233] whitespace-nowrap">API Key:</span>
+            <input id="studioApiKey" type="password" placeholder="Paste free Groq (gsk_...) or Gemini key here" class="flex-1 rounded-md border border-[#B85233]/50 bg-white px-3 py-1.5 text-xs font-mono-code text-[#1E1C1A] focus:border-[#B85233] focus:ring-1 focus:ring-[#B85233] focus:outline-none shadow-inner" />
           </div>
         </div>
         <div class="flex items-center gap-3 text-[11px]">
@@ -4387,6 +4388,22 @@ It is important to note that on August 19, 2026, at 14:22 UTC, the primary Postg
       el('probeHardwareBtn').addEventListener('click', () => {
         probeHardwareCapabilities();
         showToast('Scanned browser WebGPU and local inference capabilities.', 'info');
+      });
+
+      el('studioAiProvider').addEventListener('change', function () {
+        const val = this.value;
+        const keyInput = el('studioApiKey');
+        const wrap = el('studioApiKeyWrap');
+        if (val === 'local_only' || val === 'llm7_free') {
+          keyInput.placeholder = "(Zero API key required for " + (val === 'local_only' ? "Local v5.0 Engine)" : "LLM7.io Free Cloud AI)");
+          keyInput.disabled = true;
+          keyInput.classList.add('opacity-50', 'bg-gray-100');
+        } else {
+          keyInput.disabled = false;
+          keyInput.classList.remove('opacity-50', 'bg-gray-100');
+          keyInput.placeholder = "Paste free " + val.toUpperCase() + " key here (e.g. " + (val === 'groq' ? "gsk_..." : (val === 'gemini' ? "AIza..." : "sk-...")) + ")";
+          keyInput.focus();
+        }
       });
 
       el('byokProvider').addEventListener('change', function () {
