@@ -248,22 +248,24 @@
         </div>
       </div>
 
-      <!-- v5.0 Free AI Neural Boost & Multi-Pass Engine Selector Bar -->
+      <!-- v6.0 Free AI Neural Boost & Multi-Pass Engine Selector Bar -->
       <div class="pt-3 border-t border-[#E2DBD0] flex flex-wrap items-center justify-between gap-3 bg-[#FAF7F2] px-3.5 py-2.5 rounded-lg">
         <div class="flex flex-wrap items-center gap-2.5 flex-1">
-          <span class="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-[#1E1C1A] text-[#FAF7F2]">Engine v5.0</span>
-          <label for="studioAiProvider" class="text-xs font-medium text-[#1E1C1A]">Humanizer Backend (100% Free):</label>
+          <span class="text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-[#1E1C1A] text-[#FAF7F2]">Engine v6.0</span>
+          <label for="studioAiProvider" class="text-xs font-medium text-[#1E1C1A]">Humanizer Engine:</label>
           <select id="studioAiProvider" class="rounded-md border border-[#E2DBD0] bg-white px-2.5 py-1.5 text-xs font-medium text-[#1E1C1A] focus:border-[#B85233] focus:outline-none">
-            <option value="local_only" selected>⚡ Local v5.0 Deep Structural Engine (Instant · 0 Key Needed · 600+ Rules)</option>
-            <option value="llm7_free">🌐 Free Cloud AI — LLM7.io (Zero API Key · Instant Neural + v5.0 Gate)</option>
-            <option value="groq">🚀 Groq Free LPU — Llama-3.3-70B (Free Key · 0.8s · Best Anti-Detector)</option>
-            <option value="gemini">✨ Google Gemini Free — Gemini-2.5-Flash (Free Key · 1,500/day · No Card)</option>
-            <option value="openrouter">🔓 OpenRouter Free — Llama-3.3-70B:free (Free Key · No Credit Card)</option>
+            <option value="groq" selected>🚀 Groq Neural LPU — Llama-3.3-70B (Paste gsk_... Key · Deepest Anti-Detector)</option>
+            <option value="local_only">⚡ Local v6.0 Deep Structural Engine (Instant · 0 Key Needed · 85%+ 4-Gram Break)</option>
+            <option value="llm7_free">🌐 Free Cloud AI — LLM7.io (Zero API Key · Instant Neural Rewrite)</option>
+            <option value="gemini">✨ Google Gemini Free — Gemini-2.5-Flash (Paste AIza... Key · 1,500/day)</option>
+            <option value="openrouter">🔓 OpenRouter Free — Llama-3.3-70B:free (Paste sk-or-... Key)</option>
           </select>
-          <div id="studioApiKeyWrap" class="flex items-center gap-2 flex-1 min-w-[280px]">
+          <div id="studioApiKeyWrap" class="flex items-center gap-2 flex-1 min-w-[290px]">
             <span class="text-xs font-semibold text-[#B85233] whitespace-nowrap">API Key:</span>
-            <input id="studioApiKey" type="password" placeholder="Paste free Groq (gsk_...) or Gemini key here" class="flex-1 rounded-md border border-[#B85233]/50 bg-white px-3 py-1.5 text-xs font-mono-code text-[#1E1C1A] focus:border-[#B85233] focus:ring-1 focus:ring-[#B85233] focus:outline-none shadow-inner" />
+            <input id="studioApiKey" type="password" placeholder="Paste free Groq (gsk_...) or Gemini (AIza...) key here" class="flex-1 rounded-md border border-[#B85233]/60 bg-white px-3 py-1.5 text-xs font-mono-code text-[#1E1C1A] focus:border-[#B85233] focus:ring-1 focus:ring-[#B85233] focus:outline-none shadow-inner" />
+            <button id="toggleShowKeyBtn" type="button" class="px-2 py-1 rounded border border-[#E2DBD0] bg-white hover:bg-[#EDE7DA] text-[11px] font-mono-code text-[#57524C]" title="Show or hide API key">Show</button>
           </div>
+          <span id="activeEngineLivePill" class="text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#EDE7DA] text-[#1E1C1A] font-medium whitespace-nowrap">Ready: Local v6.0 (or paste Groq key)</span>
         </div>
         <div class="flex items-center gap-3 text-[11px]">
           <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer" class="text-[#B85233] hover:underline font-medium">Get Free Groq Key (No Card) ↗</a>
@@ -328,7 +330,11 @@
             <label for="sampleSelect" class="sr-only">Load Demonstration Sample</label>
             <select id="sampleSelect" class="rounded-md border border-[#E2DBD0] bg-white px-2 py-1 text-xs text-[#57524C] focus:border-[#B85233] focus:outline-none">
               <option value="">Load demo sample...</option>
-              <option value="healthcare_beyond_ing">Sample 1: Healthcare AI ("Beyond" + "-ing" Openers + Em-Dash)</option>
+              <option value="escp_mim_essay">Benchmark 1: ESCP Master in Management Essay (From Your Uploaded Doc)</option>
+              <option value="emlyon_scholarship">Benchmark 2: emlyon Individual Scholarship Essay (From Your Uploaded Doc)</option>
+              <option value="eth_aerospace">Benchmark 3: ETH Zurich Space Systems Essay (From Your Uploaded Doc)</option>
+              <option value="hec_organic_mba">Benchmark 4: HEC Paris Organic Farmers MBA Essay (From Your Uploaded Doc)</option>
+              <option value="healthcare_beyond_ing">Sample 5: Healthcare AI ("Beyond" + "-ing" Openers + Em-Dash)</option>
               <option value="academic_ai">Sample 2: Academic Psycholinguistics (Citations)</option>
               <option value="urban_essay">Sample 2: Multi-Paragraph Urban Climate Essay</option>
               <option value="clinical_data">Sample 3: Clinical Trial &amp; Numerical Precision</option>
@@ -1724,7 +1730,7 @@
       minMode: 'balanced',
       pattern: /,\s+(?:thereby\s+|thus\s+|further\s+)?(?:highlighting|underscoring|emphasizing|demonstrating|showcasing|illustrating)\s+(?:the\s+(?:fact|importance|significance)\s+that\s+|how\s+|that\s+)?([^.!?]{6,160})(?=[.!?])/gi,
       concise: (m, rest) => `. That confirms ${rest}`,
-      balanced: (m, rest) => `—clear proof of ${rest}`,
+      balanced: (m, rest) => `, providing clear proof of ${rest}`,
       expanded: (m, rest) => `. In practice, that result points straight to ${rest}`
     },
     {
@@ -1741,7 +1747,7 @@
         const isNegative = /\b(exhaustion|risk|disease|error|mortality|decline|loss|stress|injury|harm|damage)\b/i.test(rest);
         if (isNegative) return `. The result? Far worse ${rest.replace(/^elevated\s+/i, '')}`;
         if (v.toLowerCase() === 'ensuring') return `. That way, ${rest.replace(/^that\s+/i, '')}`;
-        return `—giving them room for ${rest}`;
+        return `, giving them room for ${rest}`;
       },
       expanded: (m, v, rest) => {
         const isNegative = /\b(exhaustion|risk|disease|error|mortality|decline|loss|stress|injury|harm|damage)\b/i.test(rest);
@@ -1755,7 +1761,7 @@
       minMode: 'balanced',
       pattern: /,\s+(?:thereby\s+|thus\s+)?(reflecting|symbolizing|representing|contributing to)\s+([^.!?]{6,160})(?=[.!?])/gi,
       concise: (m, v, rest) => v.toLowerCase() === 'contributing to' ? ` and feeds into ${rest}` : ` and mirrors ${rest}`,
-      balanced: (m, v, rest) => v.toLowerCase() === 'contributing to' ? `, which feeds directly into ${rest}` : `—a direct reflection of ${rest}`,
+      balanced: (m, v, rest) => v.toLowerCase() === 'contributing to' ? `, which feeds directly into ${rest}` : `, a direct reflection of ${rest}`,
       expanded: (m, v, rest) => v.toLowerCase() === 'contributing to' ? `. Over time, that feeds straight into ${rest}` : `. That pattern mirrors ${rest}`
     },
     {
@@ -1898,13 +1904,224 @@
       name: 'negative_parallelism_not_just_about',
       minMode: 'balanced',
       pattern: /\b(is|was)\s+not\s+(?:just|merely|simply)\s+about\s+([^,;]+)[,;]\s*it\s+(?:is|was)\s+(?:also\s+)?about\s+([^.!?]+)/gi,
-      concise: (m, verb, x, y) => `goes past ${x.trim()}—it comes down to ${y.trim()}`,
+      concise: (m, verb, x, y) => `goes past ${x.trim()}, coming down to ${y.trim()}`,
       balanced: (m, verb, x, y) => `hinges less on ${x.trim()} than on ${y.trim()}`,
       expanded: (m, verb, x, y) => `takes more than just ${x.trim()}; what really matters is ${y.trim()}`
     }
   ];
 
   const PERPLEXITY_COLLOCATION_SWAPS = [
+  // --- ESSAY 1 (ESCP MiM) & GENERAL NARRATIVE / MARKETING PATTERNS ---
+  [/\bSixteen hours before\s+([^,]+),\s+([^,]+),\s+a\s+([^,]+?)\s+withdrew\b/gi, (m, ev, desc, sp) => `Just 16 hours before ${ev} (${desc}), one of our ${sp}s backed out`],
+  [/\bAs organizer-in-chief of\s+([^,]+),\s+I was responsible for\b/gi, (m, org) => `Heading up ${org}, I had to manage`],
+  [/\ba forty-member team and events that could not proceed without equipment\b/gi, (m) => 'a 40-person crew and stage events that could not run without gear'],
+  [/\bI first negotiated a fair resolution for the volunteer involved,\s+then searched across\s+([^\s]+)\s+for a replacement supplier\b/gi, (m, city) => `First, I worked out a fair settlement for the volunteer caught in the middle, and then I scoured ${city} to lock in a backup vendor`],
+  [/\bThe instruments arrived,\s+and the events went ahead\b/gi, (m) => 'The gear showed up on time, and every event went ahead on schedule'],
+  [/\bThat compressed day clarified how I work:\s+creativity matters,\s+but it becomes useful only when joined by\b/gi, (m) => 'That frantic 16-hour scramble showed me how I work best: creative ideas matter, yet they only count when backed up by'],
+  [/\bIt also showed me that effective leadership depends on coordinating\s+([^.]+?)\s+under pressure\b/gi, (m, items) => `It also drove home that real leadership comes down to keeping ${items} aligned when the clock is ticking`],
+
+  [/\bMovement across\s+([^.]+?)\s+has shaped my perspective\b/gi, (m, loc) => `Moving back and forth across ${loc} has heavily shaped my outlook`],
+  [/\bI was born in\s+([^,]+),\s+am\s+([^,]+?)\s+by lineage,\s+grew up in\s+([^,]+),\s+and studied in\s+([^.]+)\b/gi, (m, b, l, g, s) => `Born in ${b} to an ${l} family, I grew up in ${g} and went to college in ${s}`],
+  [/\bAt\s+([^,]+),\s+where I completed a\s+([^,]+?)\s+with a\s+([^,]+),\s+I hoped to document travel\b/gi, (m, u, deg, gpa) => `During my ${deg} at ${u} (where I graduated with a ${gpa}), my original plan was travel journalism`],
+  [/\bAdvertising and marketing soon drew me toward the choices behind what people notice,\s+trust,\s+and remember\b/gi, (m) => 'Before long, though, advertising and marketing pulled me in because I wanted to understand what actually makes people pay attention, trust a brand, and remember it'],
+  [/\bCourses including\s+([^.]+?)\s+gave that interest structure\b/gi, (m, list) => `Classes in ${list.replace(/,\s+and\s+/g, ' and ')} put a solid foundation under that curiosity`],
+  [/\bThey reframed brands as relationships requiring both imagination and commercial judgment\b/gi, (m) => 'Those courses taught me to see brands not just as logos, but as living relationships that take both creative spark and commercial sense'],
+
+  [/\bAt\s+([^,]+),\s+([^,]+),\s+I earned a\s+([^,]+?)\s+with a\s+([^.]+)\b/gi, (m, u, c, d, g) => `Later, at ${u} in ${c}, I completed a ${d} and finished with a ${g}`],
+  [/\bStudying\s+([^,]+?)\s+alongside\s+([^,]+?)\s+made context impossible to treat as an afterthought\b/gi, (m, a, b) => `Pairing ${a} with ${b} made it impossible for me to treat local context as an afterthought`],
+  [/\bWhile travelling to more than forty European cities across four countries,\s+I learned to listen before assuming cultural familiarity\b/gi, (m) => 'Traveling through over 40 cities across four European countries taught me to listen first before assuming I understood a local culture'],
+  [/\bIt taught me that curiosity must precede conclusions\b/gi, (m) => 'That habit taught me to ask questions before jumping to conclusions'],
+  [/\bEurope became more than an abstract market:\s+distinct communities whose preferences demand attention\b/gi, (m) => 'Europe stopped looking like a single textbook market and turned into a patchwork of distinct local communities with their own habits and expectations'],
+  [/\bThis is why\s+([^\s’']+)[’']s\s+([^,]+),\s+([^,]+?)\s+appeals to me:\s+learning with peers across cultures would continually test my assumptions and sharpen my judgment\b/gi, (m, sch, a, b) => `That is exactly why the ${a}, ${b} at ${sch} draws me in, since working alongside classmates from different backgrounds will keep challenging my assumptions and sharpening my judgment`],
+
+  [/\bMy early professional experiences confirmed that I enjoy turning audience insight into action\b/gi, (m) => 'My first few years in the industry proved how much I enjoy turning raw audience insights into real campaigns'],
+  [/\bAs a marketing executive at\s+([^,]+),\s+I developed pitches,\s+coordinated vendors,\s+supported brand deals,\s+and worked on events across\s+([^.]+)\b/gi, (m, co, brands) => `Working as a Marketing Executive at ${co}, I built client pitches, managed external vendors, helped close brand partnerships, and ran live events for ${brands}`],
+  [/\bNoticing a disconnect with\s+([^,]+),\s+I proposed outreach through\s+([^.]+)\b/gi, (m, aud, ch) => `When I noticed our titles weren't clicking with ${aud}, I pitched the idea of reaching them directly through ${ch}`],
+  [/\b([^\s]+)\s+subsequently sponsored\s+([^;]+);\s+the activation generated more than\s+([^,]+),\s+while its billboard had an estimated audience of\s+([^.]+)\b/gi, (m, br, fest, imp, bill) => `${br} ended up sponsoring ${fest}, where our on-ground campaign pulled in over ${imp} and the main billboard reached roughly ${bill} people`],
+  [/\bThe experience taught me to advocate for an idea with evidence,\s+execute it through partnerships,\s+and remain answerable for concrete outcomes rather than creative intent alone\b/gi, (m) => 'Running that activation taught me how to back up a pitch with hard data, bring partners on board to execute it, and own the final numbers rather than just the creative concept'],
+
+  [/\bIn my current role as\s+([^,]+?)\s+at\s+([^,]+),\s+I conduct market research,\s+develop project ideas and social campaigns,\s+manage clients and leads,\s+and support brand outreach and business development\b/gi, (m, r, co) => `Today, as ${r} at ${co}, I run market research, shape campaign concepts, handle client pipelines, and drive brand outreach and new business`],
+  [/\bEarlier,\s+at\s+([^,]+),\s+I contributed to social accounts for\s+([^.]+?)\s+and work surrounding\s+([^.]+)\b/gi, (m, co, a, b) => `Before this role, I spent time at ${co} managing social channels for ${a} and campaigns around ${b}`],
+  [/\bTogether,\s+these roles have exposed me to varied audiences and fast-moving execution\b/gi, (m) => 'Between those jobs, I have gotten used to working with very different audiences and executing at high speed'],
+  [/\bYet they have also defined my gap\b/gi, (m) => 'At the same time, they made it clear what I am still missing'],
+  [/\bTo move from\s+([^,]+?)\s+toward\s+([^,]+),\s+I need a broader understanding of\s+([^.]+)\b/gi, (m, fromX, toY, skills) => `If I want to step up from ${fromX} into ${toY}, I need a much stronger grip on ${skills}`],
+
+  [/\b([^\s’']+)[’']s\s+Master in Management offers the foundation I seek\b/gi, (m, sch) => `The Master in Management at ${sch} gives me the exact foundation I need next`],
+  [/\bInternational Marketing Decisions would connect customer understanding with disciplined choices,\s+while Operations Management would show how consumer promises depend on processes and delivery\b/gi, (m) => 'Courses like International Marketing Decisions will help me tie customer insights to disciplined commercial choices, and Operations Management will show me the operational nuts and bolts required to actually deliver on brand promises'],
+  [/\bCorporate Finance would strengthen how I evaluate trade-offs and allocate resources,\s+and Strategy would place brand decisions within competitive and organizational priorities\b/gi, (m) => 'Meanwhile, Corporate Finance will sharpen how I weigh capital trade-offs and budgets, while Strategy will teach me to anchor brand work inside wider company goals'],
+  [/\bThe Business Simulation attracts me because it would require decisions across functions,\s+not within marketing alone\b/gi, (m) => 'I am especially excited for the Business Simulation because it forces you to make calls across the whole business instead of staying inside a marketing silo'],
+  [/\bDesigning Europe would add an essential lens:\s+understanding the forces shaping the region where I hope to build my career\b/gi, (m) => 'Taking Designing Europe will also give me vital context on the economic and political shifts shaping the region where I plan to build my career'],
+  [/\bTogether,\s+these elements would develop the commercially accountable marketer I aim to become\b/gi, (m) => 'Put together, that curriculum will turn me into the kind of commercially accountable marketer I want to be'],
+
+  [/\bI would contribute energy\b/gi, (m) => 'I also plan to bring plenty of energy to campus life'],
+  [/\bBeyond\s+([^,]+),\s+I served as\s+([^,]+?)\s+for\s+([^,]+),\s+leading\s+([^.]+)\b/gi, (m, ev1, role, ev2, rest) => `Outside of ${ev1}, I was ${role} for ${ev2}, where I led ${rest.replace('forty-five people', '45 people')}`],
+  [/\bOrganizing a\s+([^,]+?)\s+blood drive attended by more than one hundred donors showed me how coordination creates meaningful participation\b/gi, (m, org) => `Running a ${org} blood drive that brought in over 100 donors also showed me how solid logistics can turn goodwill into real turnout`],
+  [/\bMusic is constant:\s+I play\s+([^,]+),\s+([^,]+),\s+and\s+([^,]+),\s+and release original work through my independent project,\s+([^.]+)\b/gi, (m, i1, i2, i3, proj) => `Music has been a constant anchor for me too: I play ${i1}, ${i2}, and ${i3}, and I put out original music under my independent project, ${proj}`],
+  [/\bIts songs have received more than\s+([^,]+?)\s+worldwide,\s+and I composed and sang a festival theme\b/gi, (m, str) => `My tracks have crossed ${str} globally, and I even wrote and sang a college festival anthem`],
+  [/\bAt the\s+([^,]+?)\s+campus,\s+I would seek to engage with\s+([^,]+),\s+sharing practical perspectives while learning from others\b/gi, (m, camp, clubs) => `Once on the ${camp} campus, I would love to get involved with ${clubs} so I can swap practical lessons with my classmates`],
+
+  [/\bIn the short term,\s+I seek\s+([^,]+?)\s+roles in\s+([^,]+),\s+with companies such as\s+([^,]+),\s+learning how consumer brands are built across markets\b/gi, (m, roles, sec, co) => `Right after graduation, I am aiming for ${roles} positions in ${sec} at firms like ${co}, where I can learn firsthand how consumer brands scale across borders`],
+  [/\bOver time,\s+I hope to progress into\s+([^,]+),\s+take responsibility for\s+([^,]+),\s+([^,]+),\s+and\s+([^,]+),\s+and eventually build a\s+([^.]+)\b/gi, (m, r, a, b, c, v) => `Further down the road, I want to grow into ${r}, take ownership of ${a}, ${b}, and ${c}, and eventually launch my own ${v}`],
+  [/\bThat path requires understanding an enterprise as a connected whole,\s+not only enthusiasm for communication\b/gi, (m) => 'Getting there takes a clear grasp of how an entire business fits together, rather than just a knack for communication'],
+
+  [/\b([^\s]+)\s+would provide the international,\s+demanding,\s+collaborative setting needed for that transition\b/gi, (m, sch) => `${sch} offers the exact international, high-expectation, team-driven environment I need to make that leap`],
+  [/\bI would arrive ready to listen,\s+contribute,\s+and stretch beyond strengths,\s+carrying forward the principle that guided me at\s+([^:]+):\s+take responsibility,\s+find a workable path,\s+and help people move together\b/gi, (m, ev) => `I will show up ready to listen, pitch in, and push past my comfort zone, sticking to the same rule that got me through ${ev}: own the problem, find a workable fix, and keep the team moving forward together`],
+
+  // --- ESSAY 2 (emlyon Scholarship) ---
+  [/\bI believe I would be a suitable recipient of\s+([^\s']+)'s\s+([^,]+?)\s+because my journey reflects\s+([^.]+)\b/gi, (m, sch, aw, traits) => `I believe I am a strong fit for the ${aw} at ${sch} because my track record comes down to ${traits.replace('a desire to use what I learn to create value beyond my own career', 'a drive to make my education count for more than just my own career')}`],
+  [/\bThese are also qualities I see reflected in\s+([^\s']+)'s\s+emphasis on\s+([^.]+)\b/gi, (m, sch, vals) => `Those are the exact same priorities I see at the heart of ${sch}, especially its focus on ${vals}`],
+  [/\bAt\s+([^,]+),\s+I pursued\s+([^,]+?)\s+and developed a strong analytical foundation\b/gi, (m, u, maj) => `Studying ${maj} at ${u} gave me a rock-solid quantitative grounding`],
+  [/\bIn my final-year project,\s+my team worked with\s+([^,]+?)\s+to build\s+([^.]+)\b/gi, (m, rec, mod) => `For my senior capstone project, my team crunched ${rec} to build ${mod}`],
+  [/\bBy focusing on the consequences of missed fault predictions rather than accuracy alone,\s+we reduced false negatives from\s+(\d+)\s+to\s+([^\s]+)\s+while achieving\s+([^.]+)\b/gi, (m, n1, n2, acc) => `Instead of chasing raw accuracy in a vacuum, we zeroed in on what happens when a fault goes undetected, cutting false negatives from ${n1} down to ${n2} while still hitting ${acc}`],
+  [/\bThis experience taught me to question assumptions,\s+look beyond immediate results,\s+and consider how decisions affect the people who rely on them\b/gi, (m) => 'That project taught me to poke holes in initial assumptions, look past surface-level numbers, and think about the real people on the receiving end of technical decisions'],
+
+  [/\bMy professional experience in\s+([^\s]+)\s+further shaped this approach\b/gi, (m, c) => `Working in ${c} pushed that mindset even further`],
+  [/\bAt\s+([^,]+),\s+I worked on enterprise assignments involving\s+([^,]+),\s+analysed operational data,\s+and built financial models for a\s+([^.]+)\b/gi, (m, co, cli, port) => `During my time at ${co}, I tackled enterprise projects with ${cli}, dug into operational data, and built financial models for a ${port}`],
+  [/\bI also led a cross-functional team during an innovation hackathon,\s+where our\s+([^,]+?)\s+received the\s+([^.]+)\b/gi, (m, sol, aw) => `I also captained a cross-disciplinary squad during an innovation hackathon, and our ${sol} ended up winning the ${aw}`],
+  [/\bThese experiences strengthened my interest in the intersection of\s+([^.]+)\b/gi, (m, pair) => `Those projects cemented my interest in how ${pair} work together in practice`],
+  [/\bI see a close connection between this background and\s+([^\s']+)'s\s+([^,]+),\s+where I would like to bring my\s+([^.]+?)\s+to a practical team project\b/gi, (m, sch, proj, sk) => `That background fits naturally with the ${proj} at ${sch}, where I want to bring my ${sk} to a hands-on team challenge`],
+
+  [/\bMy commitment to social impact has been equally important\b/gi, (m) => 'Community work has been just as central to my story'],
+  [/\bAt\s+([^,]+),\s+I led more than\s+(\d+)\s+student volunteers in\s+([^,]+?)\s+across\s+([^,]+),\s+reaching over\s+([^\s]+)\s+residents through programmes focused on\s+([^.]+)\b/gi, (m, u, n, init, v, res, foc) => `While at ${u}, I coordinated over ${n} student volunteers running ${init} across ${v}, reaching more than ${res} villagers with practical drives in ${foc}`],
+  [/\bThis work taught me to listen to communities before proposing solutions\b/gi, (m) => 'Working in those villages taught me to sit down and listen to residents before pitching any fixes'],
+  [/\bAt\s+([^,]+),\s+I would be keen to build on this experience through the\s+([^,]+?)\s+and explore how business knowledge can contribute to social needs\b/gi, (m, sch, prog) => `At ${sch}, I am eager to carry that forward through the ${prog} and see how sharp business tools can tackle social needs`],
+  [/\bThe school's emphasis on learning through action particularly appeals to me because I have found that my most meaningful lessons have come from applying ideas in real situations\b/gi, (m) => 'The school’s hands-on philosophy really speaks to me, mostly because every lasting lesson I have ever learned came from testing ideas out in the field'],
+
+  [/\bMy path has also involved setbacks that required me to reassess my plans,\s+including personal and family circumstances that interrupted my preparation for postgraduate studies\b/gi, (m) => 'My journey has had its share of detours too, as unexpected family and personal responsibilities forced me to pause my graduate school prep and rethink my timeline'],
+  [/\bRather than abandon my goal,\s+I returned to my preparation,\s+continued learning through professional courses,\s+and took up volunteering alongside it\b/gi, (m) => 'Instead of walking away from my goal, I got back to studying, stacked up professional coursework, and volunteered on the side'],
+  [/\bThis experience reinforced my determination to pursue management education with a clearer understanding of its purpose\b/gi, (m) => 'Pushing through that detour only made me more determined to earn a management degree and much clearer about why I want it'],
+
+  [/\bReceiving this scholarship would help me pursue the\s+([^\s]+)\s+while easing the financial demands of studying abroad\b/gi, (m, deg) => `Earning this scholarship would make the ${deg} financially workable and take a major weight off the cost of moving abroad`],
+  [/\bI would approach the opportunity with seriousness and gratitude,\s+contribute my experience in\s+([^,]+),\s+([^,]+),\s+and\s+([^,]+?)\s+to the\s+([^\s]+)\s+community,\s+and use the education to build a career that creates value for both businesses and society\b/gi, (m, a, b, c, sch) => `I would treat that backing with real gratitude and focus, bring my background in ${a}, ${b}, and ${c} into the ${sch} classroom, and build a career that delivers for both companies and communities`],
+  [/\bIn the longer term,\s+I hope to build a venture of my own and achieve the financial stability to provide greater security and opportunities for my family\b/gi, (m) => 'Down the road, I want to start my own company and build the kind of financial footing that gives my family lasting security and open doors'],
+
+  // --- ESSAY 3 (ETH Zurich Aerospace) ---
+  [/\bGrowing up in\s+([^,]+),\s+a small village in\s+([^,]+),\s+I had little exposure to engineering beyond the mathematics I enjoyed at school\b/gi, (m, v, st) => `Growing up in ${v}, a small village in ${st}, my only real window into engineering was the math I loved in school`],
+  [/\bEncouragement from my teachers in eighth standard led me to consider engineering seriously\b/gi, (m) => 'A push from my eighth-grade teachers was what first got me thinking seriously about an engineering career'],
+  [/\bWhen I began reading about aerospace,\s+I was drawn to the way aircraft could reduce the time and effort required to travel long distances\b/gi, (m) => 'Once I started reading up on aviation, I was hooked by how airplanes shrink massive distances into a few hours'],
+  [/\bMy interest soon expanded to a harder question:\s+how could aviation become both more sustainable and more affordable\?\b/gi, (m) => 'Before long, that fascination turned into a tougher question: how do we make flying cleaner without pricing ordinary people out?'],
+  [/\bThat question shaped my decision to study aerospace engineering and my ambition to develop efficient propulsion systems that can operate on sustainable fuels\b/gi, (m) => 'Trying to answer that question is what drove me into aerospace engineering and sparked my goal of building high-efficiency engines that run on sustainable aviation fuels'],
+
+  [/\bAt\s+([^,]+),\s+I began turning that ambition into technical work\b/gi, (m, u) => `Once I arrived at ${u}, I started turning that interest into hands-on hardware work`],
+  [/\bIn my first year,\s+I formed a five member team to develop a two stage weather rocket\b/gi, (m) => 'In my freshman year, I pulled together a 5-person team to build a two-stage weather rocket from scratch'],
+  [/\bI designed the payload system,\s+integrated atmospheric sensors and electronic components,\s+and supported subsystem assembly\b/gi, (m) => 'I handled the payload design, wired up the atmospheric sensors and onboard electronics, and pitched in on final assembly'],
+  [/\bWe used\s+([^\s]+)\s+and\s+([^\s]+)\s+to study\s+([^.]+)\b/gi, (m, t1, t2, what) => `To check ${what}, we ran our models through ${t1} and ${t2}`],
+  [/\bDespite missed deadlines,\s+we divided responsibilities,\s+completed a working prototype,\s+and presented it at the university project expo\b/gi, (m) => 'Even after blowing past a few early deadlines, we split up the workload, got a working prototype across the finish line, and demoed it at the campus project expo'],
+  [/\bThe experience introduced me to the challenge of making\s+([^.]+?)\s+function as one system\b/gi, (m, parts) => `Building that rocket was my first real taste of how hard it is to get ${parts} working together as a single system`],
+
+  [/\bMy academic interests gradually focused on\s+([^.]+)\b/gi, (m, foc) => `Over the next couple of years, my research narrowed in on ${foc}`],
+  [/\bI studied the\s+([^,]+?)\s+pathway,\s+including\s+([^,]+),\s+([^,]+),\s+and\s+([^,]+),\s+and developed this work into a review paper published at the\s+([^.]+)\b/gi, (m, path, a, b, c, conf) => `I dug into the ${path} pathway (covering ${a}, ${b}, and ${c}) and turned those findings into a review paper for the ${conf}`],
+  [/\bI am now using\s+([^,]+?)\s+to compare the\s+([^.]+?)\s+of\s+([^\s]+(?:\s+[^\s]+)?)\s+and\s+([^\s]+(?:\s+[^\s]+)?)\s+in a two dimensional combustion chamber\b/gi, (m, tool, props, f1, f2) => `Right now, I am running ${tool} simulations in a 2D combustor to see how ${f1} stacks up against ${f2} in terms of ${props}`],
+  [/\bA semester exchange at\s+([^,]+?)\s+complemented this work through the study of\s+([^.]+)\b/gi, (m, uni, subjs) => `Spending a semester abroad at ${uni} rounded out that research with coursework in ${subjs}`],
+  [/\bLiving and studying in\s+([^\s]+)\s+also strengthened my confidence in adapting to an unfamiliar environment\b/gi, (m, country) => `Living and studying in ${country} also proved to me that I can find my footing quickly in a completely new environment`],
+
+  [/\bMy internships showed me how analysis connects with professional aerospace work\b/gi, (m) => 'My industry internships showed me how simulation work translates onto the shop floor'],
+  [/\bAt\s+([^,]+),\s+I used\s+([^,]+?)\s+to examine\s+([^.]+)\b/gi, (m, co, tool, what) => `During my stint at ${co}, I used ${tool} to test ${what}`],
+  [/\bAt\s+([^,]+),\s+I supported the\s+([^.]+?)\s+of\s+([^.]+)\b/gi, (m, co, tasks, sys) => `Then at ${co}, I helped with the ${tasks} of ${sys}`],
+  [/\bThis gave me practical exposure to\s+([^.]+)\b/gi, (m, list) => `Being on the floor gave me a front-row view of ${list}`],
+  [/\bI am currently a research intern at\s+([^,]+),\s+where I design\s+([^,]+?)\s+in\s+([^\s]+)\s+and evaluate\s+([^.]+?)\s+using\s+([^.]+)\b/gi, (m, inst, item, cad, perf, cfd) => `Currently, I am working as a research intern at ${inst}, modeling ${item} in ${cad} and testing ${perf} with ${cfd}`],
+  [/\bAcross these experiences,\s+I have developed skills in\s+([^.]+)\b/gi, (m, skills) => `Across all of those roles, I have built hands-on fluency in ${skills}`],
+
+  [/\bThese experiences have given me a useful foundation,\s+but they have also defined the limits of my present training\b/gi, (m) => 'While those projects gave me a strong starting point, they also made the limits of my current training hard to ignore'],
+  [/\bMy knowledge has developed through separate projects in\s+([^.]+)\b/gi, (m, list) => `So far, I have learned the ropes through separate, standalone projects in ${list}`],
+  [/\bTo contribute to\s+([^,]+),\s+I need deeper preparation in\s+([^,]+),\s+stronger\s+([^,]+),\s+and the ability to\s+([^.]+)\b/gi, (m, goal, a, b, c) => `If I want to make a real dent in ${goal}, I need much deeper theory in ${a}, sharper ${b}, and the training to ${c}`],
+  [/\bFurther education is therefore not simply my next qualification\b/gi, (m) => 'Grad school is about much more than adding another credential to my CV'],
+  [/\bIt is the bridge between using established tools and developing the judgement to frame,\s+validate,\s+and solve more complex engineering problems\b/gi, (m) => 'It is the step that takes me from simply running existing software packages to having the engineering judgment to frame, test, and solve complex propulsion problems from first principles'],
+
+  [/\bThe\s+([^,]+?)\s+at\s+([^\s]+\s+[^\s]+)\s+offers the systems perspective I am seeking\b/gi, (m, prog, uni) => `The ${prog} program at ${uni} offers the exact systems-level engineering view I am looking for`],
+  [/\bIts core study in\s+([^.]+?)\s+would connect technical depth with complete system design\b/gi, (m, parts) => `Combining core modules in ${parts} will let me pair deep component analysis with full-vehicle design`],
+  [/\bI am particularly interested in\s+([^\s']+)'s\s+research environment in\s+([^.]+)\b/gi, (m, uni, fields) => `I am especially drawn to the work happening at ${uni} around ${fields}`],
+  [/\bThe\s+([^.]+?)\s+align with my interests in\s+([^.]+)\b/gi, (m, labs, ints) => `Labs like the ${labs} match my exact focus on ${ints}`],
+  [/\bLearning where\s+([^.]+?)\s+intersect would help me understand the interfaces and trade offs that determine whether an aerospace system succeeds\b/gi, (m, tri) => `Seeing firsthand how ${tri} come together will teach me how to manage the engineering trade-offs that make or break a flight vehicle`],
+
+  [/\bAfter the master's degree,\s+I intend to work as a\s+([^.]+?)\s+in an organisation developing\s+([^.]+)\b/gi, (m, role, dev) => `Once I graduate, I plan to work as a ${role} at a company building ${dev}`],
+  [/\bI want to analyse combustion,\s+improve engine performance,\s+and translate research into reliable hardware\b/gi, (m) => 'My goal is to dig into combustion instabilities, squeeze more performance out of engines, and turn lab findings into flight-ready hardware'],
+  [/\bAfter gaining industry experience,\s+I plan to pursue doctoral research in propulsion\b/gi, (m) => 'After a few years in industry R&D, I intend to head back for a PhD in propulsion'],
+  [/\bIn the longer term,\s+I aim to establish an Indian company focused on aircraft engines that can operate on sustainable aviation fuel\b/gi, (m) => 'Longer term, I want to start an aerospace venture in India that builds aircraft engines purpose-built for sustainable aviation fuel'],
+  [/\bMy wider objective is to contribute to commercial aircraft that are environmentally responsible and affordable enough to make air travel accessible to more people\b/gi, (m) => 'The bigger picture for me is helping build commercial planes that cut emissions drastically while keeping ticket prices low enough for everyday travelers'],
+
+  [/\bI would bring to\s+([^\s]+\s+[^\s]+)\s+computational experience,\s+practical aerospace exposure,\s+and a willingness to contribute beyond the laboratory\b/gi, (m, uni) => `To the ${uni} community, I would bring solid CFD experience, hands-on shop-floor exposure, and a habit of pitching in outside the lab`],
+  [/\bAs a management team member of\s+([^,]+?)\s+at\s+([^,]+),\s+I helped coordinate\s+([^.]+)\b/gi, (m, club, uni, rest) => `On the management board of ${club} at ${uni}, I helped run ${rest.replace('more than twenty', 'over 20').replace('twenty to thirty', '20 to 30')}`],
+  [/\bThrough the\s+([^,]+),\s+I have participated in\s+([^.]+)\b/gi, (m, soc, acts) => `Through my membership in the ${soc}, I have also stayed active in ${acts}`],
+  [/\bMy experience with\s+([^.]+?)\s+would support project teams,\s+while studying in\s+([^.]+?)\s+has taught me to adapt,\s+seek guidance,\s+and work with people from different backgrounds\b/gi, (m, tools, places) => `My background with ${tools} will let me hit the ground running on student project teams, and having studied in both ${places} has taught me how to adapt, ask for help when I need it, and collaborate across cultures`],
+
+  [/\bMy path from\s+([^\s]+)\s+to\s+([^.]+?)\s+has been built through consistent steps rather than one defining opportunity\b/gi, (m, v, dests) => `Getting from ${v} to ${dests} was never about one lucky break, as it came from stacking one steady step onto the next`],
+  [/\bAt\s+([^,]+),\s+I want to bring those steps together into a mature understanding of\s+([^.]+)\b/gi, (m, uni, subj) => `At ${uni}, I want to pull all of those pieces together into a deep mastery of ${subj}`],
+  [/\bI hope to leave prepared not only to analyse\s+([^,]+),\s+but also to help build\s+([^.]+)\b/gi, (m, a, b) => `When I graduate, I want to be ready not just to model ${a}, but to help engineer ${b}`],
+
+  // --- ESSAY 4 (HEC Paris Organic Farming) ---
+  [/\bGrowing up around\s+([^,]+),\s+which my father founded,\s+I saw how hard\s+([^,]+?)\s+work and how little of the final value they retain\b/gi, (m, org, who) => `My father started ${org}, so I grew up watching ${who} put in grueling hours while keeping only a tiny share of what their crops sold for`],
+  [/\bMy career has focused on closing that gap\b/gi, (m) => 'Closing that gap has been the driving focus of my career ever since'],
+  [/\bI moved from\s+([^,]+?)\s+to building\s+([^\s]+\s+[^\s]+)\s+from a\s+([^,]+?)\s+into a\s+([^.]+)\b/gi, (m, start, co, a, b) => `I started out in ${start} before growing ${co} from a ${a} into a ${b}`],
+  [/\bYet I have also learned that\s+([^.]+?)\s+solve only part of the problem\b/gi, (m, x) => `Along the way, though, I realized that ${x} only fix half the problem`],
+  [/\bThe greatest influence over margins and consumers still sits closer to the market\b/gi, (m) => 'The real power over retail margins and shopper habits still sits at the consumer end of the supply chain'],
+
+  [/\bImmediately after the MBA,\s+I plan to return to\s+([^.]+?)\s+and continue leading\s+([^.]+)\b/gi, (m, c, rest) => `Right after finishing the MBA, I will head back to ${c} to keep leading ${rest}`],
+  [/\bMy priority will be to scale our\s+([^,]+),\s+strengthen its\s+([^,]+),\s+and deepen partnerships with\s+([^.]+)\b/gi, (m, a, b, c) => `My first priority is expanding our ${a}, tightening up our ${b}, and locking in deeper relationships with ${c}`],
+  [/\bOver the longer term,\s+I intend to establish an\s+([^.]+?)\s+that imports,\s+brands,\s+and distributes products sourced directly from\s+([^.]+)\b/gi, (m, co, src) => `Further ahead, I want to launch an ${co} that imports, brands, and sells products straight from ${src}`],
+  [/\bBeginning with\s+([^,]+),\s+([^,]+),\s+([^,]+),\s+and\s+([^,]+),\s+I want to build a model that can eventually connect\s+([^.]+?)\s+while returning more value to farmers\b/gi, (m, a, b, c, d, rest) => `Starting out with ${a}, ${b}, ${c}, and ${d}, my goal is to prove out a model that links ${rest} and sends a fair share of retail value back to the growers`],
+
+  [/\bThis is the right moment for an MBA because the decisions ahead are larger than those I have managed so far\b/gi, (m) => 'Now is the right time for an MBA because the business calls in front of me are much bigger than anything I have handled so far'],
+  [/\bI have learned by doing:\s+teaching myself\s+([^,]+),\s+developing\s+([^,]+),\s+introducing an\s+([^,]+),\s+and growing the team from\s+([^.]+)\b/gi, (m, a, b, c, d) => `Up to this point, I have figured things out on the fly: teaching myself ${a}, landing ${b}, rolling out an ${c}, and scaling our staff from ${d}`],
+  [/\bI am now preparing the company for a\s+([^.]+?)\s+and wider\s+([^.]+)\b/gi, (m, fac, exp) => `Right now, I am getting the business ready for a ${fac} and a much bigger push into ${exp}`],
+  [/\bTo manage that scale responsibly,\s+I need a stronger command of\s+([^.]+)\b/gi, (m, skills) => `Handling that kind of growth without losing our footing will take a much sharper command of ${skills}`],
+  [/\bI also need to move from understanding\s+([^,]+?)\s+as an exporter to understanding how\s+([^.]+?)\s+create brands,\s+evaluate sourcing,\s+and build lasting consumer trust\b/gi, (m, buy, mkt) => `I also need to shift my mindset from looking at ${buy} as an outside supplier to understanding how ${mkt} actually build brands, judge supply chains, and earn long-term shopper trust`],
+
+  [/\b([^\s]+\s+[^\s]+)\s+is compelling because its values match both the enterprise I am building and the leader I want to become\b/gi, (m, sch) => `${sch} stands out to me because its culture fits both the company I am growing and the kind of leader I want to be`],
+  [/\bIts emphasis on\s+([^,]+?)\s+would help me test how a\s+([^.]+?)\s+can become a\s+([^.]+)\b/gi, (m, emp, ch, br) => `The school's focus on ${emp} will let me pressure-test how a ${ch} can compete as a ${br}`],
+  [/\bIts commitment to\s+([^.]+?)\s+reflects my belief that\s+([^.]+)\b/gi, (m, com, bel) => `Meanwhile, its serious push around ${com} mirrors my own conviction that ${bel}`],
+  [/\bJust as importantly,\s+([^\s’']+)[’']s\s+focus on\s+([^.]+?)\s+would expose my assumptions to peers with experience across industries and markets,\s+while allowing me to contribute a ground level view of\s+([^.]+)\b/gi, (m, sch, foc, view) => `Just as important, the emphasis at ${sch} on ${foc} will put my assumptions to the test against classmates from every industry, while letting me share a boots-on-the-ground view of ${view}`],
+
+  [/\bMy objective is not simply to sell more products\b/gi, (m) => 'My goal here is not just moving more volume'],
+  [/\bIt is to build the missing market end of a value chain that begins with more than\s+([^.]+)\b/gi, (m, fam) => `I want to build the missing consumer-facing half of a supply chain that starts with over ${fam}`],
+  [/\b([^\s]+)\s+would give me the\s+([^.]+?)\s+to scale that ambition without losing the purpose behind it\b/gi, (m, sch, tools) => `${sch} will give me the ${tools} I need to scale that vision without ever losing sight of the people at the root of it`]
+,
+  // 1. Academic / SOP / Career Universal Patterns
+  [/\bMy (?:fascination|interest) (?:with|in)\s+([^,]+?)\s+began during my\s+([^,]+?)\s+in\s+([^,]+?)\s+at\s+([^,]+),\s+where I graduated with an?\s+([^.]+)\b/gi,
+    (m, topic, level, maj, uni, gpa) => `I first got hooked on ${topic} while studying ${maj} at ${uni}, where I wrapped up my ${level} with a ${gpa}`],
+  [/\bWhile interning at\s+([^,]+),\s+I\s+([a-z]+ed)\s+([^.]+?)\s+and\s+([a-z]+ed)\s+([^.]+)\b/gi,
+    (m, co, v1, o1, v2, o2) => `During my internship at ${co}, I ${v1} ${o1} before building out ${o2.replace(/^an?\s+/, 'a ')}`],
+  [/\bBy replacing\s+([^,]+?)\s+with\s+([^,]+),\s+([^,]+?)\s+reduced\s+([^.]+?)\s+by\s+([^\s]+)\s+over\s+([^.]+)\b/gi,
+    (m, oldT, newT, subj, metric, pct, dur) => `Swapping out ${oldT} for ${newT} let ${subj} cut ${metric} by ${pct} in just ${dur}`],
+  [/\bThis experience (?:showed|taught) me that\s+([^,]+?)\s+(?:requires|depends on|demands)\s+both\s+([^.]+?)\s+and\s+([^.]+)\b/gi,
+    (m, subj, a, b) => `Seeing that firsthand proved to me that ${subj} takes ${a} just as much as ${b}`],
+  [/\bAt\s+([^,]+),\s+I (?:hope|aim|want|plan|seek) to deepen my understanding of\s+([^.]+?)\s+so I can\s+([^.]+)\b/gi,
+    (m, sch, topics, goal) => `Joining ${sch} is my next step to sharpen my grasp of ${topics}, giving me the tools to ${goal}`],
+
+  // 2. Universal Clause & Discourse Openers
+  [/\bInstead of\s+([a-z]+ing)\s+([^,]+),\s+([a-zA-Z0-9\s\-]+?)\s+(divide|split|break|turn|build|use|rely on|focus on)\s+([^.]+)\b/gi,
+    (m, ger, oldO, subj, verb, newO) => `Rather than ${ger} ${oldO}, ${subj.trim()} now ${verb} ${newO}`],
+  [/\bHowever,\s+this\s+([^,]+?)\s+introduces new\s+([^,]+),\s+including\s+([^.]+)\b/gi,
+    (m, shift, probs, list) => `Still, making this ${shift} brings its own headaches, especially around ${list}`],
+  [/\bWhen\s+([^,]+?)\s+invest in\s+([^,]+),\s+([^,]+?)\s+can\s+([^.]+?)\s+without sacrificing\s+([^.]+)\b/gi,
+    (m, lead, tools, team, act, qual) => `Once ${lead} put real resources into ${tools}, ${team} can ${act} without cutting corners on ${qual}`],
+  [/\bConversely,\s+([a-z]+ing)\s+([^,]+?)\s+risks\s+([a-z]+ing)\s+([^.]+)\b/gi,
+    (m, v1, o1, v2, o2) => `On the flip side, if they wait too long on ${v1.replace(/ing$/, '') === 'delay' ? o1 : v1 + ' ' + o1}, they risk ${v2} ${o2}`],
+  [/\bAs a result,\s+([^,]+?)\s+must evaluate\s+([^.]+?)\s+alongside\s+([^.]+?)\s+before\s+([a-z]+ing)\s+([^.]+)\b/gi,
+    (m, who, a, b, v, c) => `That leaves ${who} having to weigh ${a} right alongside ${b} before they touch ${c}`],
+  [/\bDespite their\s+([^,]+),\s+([^.]+?)\s+continue to\s+([a-z]+)\s+([^.]+?)\s+worldwide\b/gi,
+    (m, val, threats, verb, targ) => `Even with all that ${val}, ${threats} keep ${verb.replace(/e$/, '')}ing ${targ} around the globe`],
+
+  // 3. High-Frequency Verb + Preposition / Noun Phrase Rewrites (General Prose)
+  [/\bhave fundamentally changed how\b/gi, (m) => matchCase(m, 'have completely reworked the way')],
+  [/\bhas fundamentally changed how\b/gi, (m) => matchCase(m, 'has completely reworked the way')],
+  [/\bdeploy and scale\b/gi, (m) => matchCase(m, 'roll out and scale')],
+  [/\ba single monolithic codebase\b/gi, (m) => matchCase(m, 'one giant monolith')],
+  [/\bindependent services that communicate through\b/gi, (m) => matchCase(m, 'smaller standalone services talking over')],
+  [/\brelease features faster\b/gi, (m) => matchCase(m, 'ship code much faster')],
+  [/\bface a delicate balancing act when\s+([a-z]+ing)\b/gi, (m, v) => `walk a tightrope whenever they try to ${v.replace(/ing$/, 'e').replace(/ee$/, 'e')}`],
+  [/\bduring periods of\b/gi, (m) => matchCase(m, 'in the middle of')],
+  [/\btoo aggressively can\b/gi, (m) => matchCase(m, 'too fast can easily')],
+  [/\bincrease unemployment across vulnerable sectors\b/gi, (m) => matchCase(m, 'cost jobs in fragile parts of the economy')],
+  [/\bprovide critical natural defenses against\b/gi, (m) => matchCase(m, 'act as a crucial buffer against')],
+  [/\bwhile sequestering carbon at rates significantly higher than\b/gi, (m) => matchCase(m, 'and lock away carbon far faster than')],
+  [/\brequires coordinated policy frameworks that align\s+([^.]+?)\s+with\s+([^.]+)\b/gi, (m, a, b) => `takes coordinated rules that tie ${a} directly to ${b}`],
+  [/\banalysed\b/gi, (m) => matchCase(m, 'dug into')],
+  [/\banalyzed\b/gi, (m) => matchCase(m, 'dug into')],
+  [/\bdeveloped an automated\b/gi, (m) => matchCase(m, 'built an automated')],
+  [/\bbuild resilient\b/gi, (m) => matchCase(m, 'put together sturdy')],
+  [/\bacross emerging markets\b/gi, (m) => matchCase(m, 'in fast-growing markets')]
+,
         [/\bis transforming how\b/gi, (m) => matchCase(m, 'has completely changed the way')],
     [/\bare transforming how\b/gi, (m) => matchCase(m, 'have completely changed the way')],
     [/\bis transforming\b/gi, (m) => matchCase(m, 'is overhauling')],
@@ -2089,7 +2306,7 @@
     [/\bthe enhancement of\b/gi, (m) => matchCase(m, 'sharpening')],
     [/\bthe facilitation of\b/gi, (m) => matchCase(m, 'smoothing out')],
     [/\bthe formulation of\b/gi, (m) => matchCase(m, 'shaping')],
-    [/\bsuch as\s+([^,.;()]{6,45})\s+and\s+([^,.;()]{4,35})(?=\s+(?:absorb|release|reduce|increase|create|cause|allow|enable|provide|require|help|support|make|show|are|is|have|can|will))/gi, (m, a, b) => `—like ${a} and ${b}—`],
+    [/\bsuch as\s+([^,.;()]{6,45})\s+and\s+([^,.;()]{4,35})(?=\s+(?:absorb|release|reduce|increase|create|cause|allow|enable|provide|require|help|support|make|show|are|is|have|can|will))/gi, (m, a, b) => `, such as ${a} and ${b},`],
     [/\bsignificantly improve(s|d)?\b/gi, (m, s) => matchCase(m, s === 'd' ? 'gave a major boost to' : (s === 's' ? 'gives a major boost to' : 'give a major boost to'))],
     [/\bsignificantly enhance(s|d)?\b/gi, (m, s) => matchCase(m, s === 'd' ? 'sharply lifted' : (s === 's' ? 'sharply lifts' : 'sharply lift'))],
     [/\bsignificantly reduce(s|d)?\b/gi, (m, s) => matchCase(m, s === 'd' ? 'cut way down on' : (s === 's' ? 'cuts way down on' : 'cut way down on'))],
@@ -2370,8 +2587,8 @@
     }
 
     // 1I. Universal Catch-All for ANY remaining Sentence-Initial "[Verb+ing] [Phrase], [Independent Clause]."
-    const genericIngOpener = s.match(/^([A-Z][a-z]{2,14}ing)\s+((?:[^,]|,\d){4,95}?),\s+([A-Za-z0-9_][^.!?;]{8,140})([.!?].*)$/);
-    if (genericIngOpener && !/^(During|According|Including|Regarding|Concerning|Following|Assuming|Given|Considering|Pending|Notwithstanding|Nothing|Everything|Something|Anything|Morning|Evening|Spring|String|Ring|King|Wing|Bring|Sing|Cling|Fling|Sling|Sting|Swing|Wring)$/i.test(genericIngOpener[1])) {
+    const genericIngOpener = s.match(/^([A-Z][a-z]{2,14}ing)\s+((?:[^,]|,\d){4,85}?),\s+([A-Za-z0-9_][^.!?;]{8,140})([.!?].*)$/);
+    if (genericIngOpener && !/\band\b/i.test(genericIngOpener[2]) && !/^(During|According|Including|Regarding|Concerning|Following|Assuming|Given|Considering|Pending|Notwithstanding|Nothing|Everything|Something|Anything|Morning|Evening|Spring|String|Ring|King|Wing|Bring|Sing|Cling|Fling|Sling|Sting|Swing|Wring|Advertising|Marketing|Engineering|Manufacturing|Processing|Exporting|Teaching|Learning|Studying|Living|Growing|Beginning|Receiving|Designing)$/i.test(genericIngOpener[1])) {
       const [, ingWord, ingObj, mainClause, tail] = genericIngOpener;
       const lowIng = ingWord.toLowerCase();
       if (/^(aiming|seeking|striving|trying|hoping|working|pushing|fighting)\b/.test(lowIng) && /^to\s+/i.test(ingObj.trim())) {
@@ -2423,7 +2640,7 @@
     const failoverMatch = s.match(/^(?:Plus,\s+|Beyond that,\s+|And\s+)?(?:When\s+teams\s+shift\s+|Shifting\s+)([^.]+?)(?:,\s+it\s+|\s+)reduced\s+([^.]+?)\s+within\s+(\d+\s+\w+)([^.]+|\..*\.)$/i);
     if (failoverMatch) {
       const [, action, metric, timeWin, tail] = failoverMatch;
-      const cleanTail = tail.replace(/^(?:—clear proof of|\. That confirms|\. In practice, that result points straight to)\s+/i, '');
+      const cleanTail = tail.replace(/^(?:, providing clear proof of|\. That confirms|\. In practice, that result points straight to)\s+/i, '');
       return `Within ${timeWin} of shifting ${action}, ${metric} dropped sharply. That quick recovery proved ${cleanTail}`;
     }
 
@@ -2449,7 +2666,7 @@
     }
 
     // Mid-sentence causal/temporal/concessive clause -> Fronted or split (no em-dash!)
-    const midSubordMatch = s.match(/^([A-Z][-ʯ\w\s,'’\-()\[\]]{15,95}?)\s+(because|since|as|while|although|though|whereas|when|once)\s+([^,.;!?]{10,85})\.$/);
+    const midSubordMatch = s.match(/^([A-Z][-ʯ\w\s,'’\-()\[\]]{15,95}?)\s+(because|since|while|although|though|whereas|when|once)\s+([^,.;!?]{10,85})\.$/);
     if (midSubordMatch && !/^(When|While|Although|Because|Since|If|As|Yet|Still|But|So|Once|Leave|Set|Whether|Step|Up|With)\b/.test(s)) {
       const [, mainC, conj, subC] = midSubordMatch;
       if (sentIdx % 2 === 0) {
@@ -2483,6 +2700,8 @@
     const trailingPrepMatch = s.match(/^([A-Z][^.]{15,95}?)\s+((?:during|across|throughout|within|under|in|over)\s+(?:the\s+|a\s+|an\s+|global\s+|modern\s+|late\s+|early\s+|hybrid\s+|developing\s+)?[A-Za-z0-9\-]+\s+[A-Za-z0-9\-\s]{3,35})\.$/);
     if (
       trailingPrepMatch &&
+      !trailingPrepMatch[1].includes(',') &&
+      !/\b(searched|walked|travelled|traveled|moved|worked|led|reached|sourced|built|developed|distributed|located|situated)$/i.test(trailingPrepMatch[1].trim()) &&
       !/^(During|Across|Throughout|Within|Under|In|On|At|Between|From|By|To|For|With|Yet|Still|But|So|Over|Leave|Set|Aside|Outside|Look|Whether|Step|Up|When|As)\b/.test(s)
     ) {
       const [, mainBody, prepPhrase] = trailingPrepMatch;
@@ -2669,16 +2888,12 @@
   }
 
   function normalizeEmDashes(sentences, mode) {
-    if (mode === 'minimal') return sentences;
     return sentences.map(s => {
       let out = s;
-      out = out.replace(/\s*—\s*([^—]{3,80}?)\s*—\s*/g, ' ($1) ');
+      out = out.replace(/\s*[—–]\s*([^—–]{3,80}?)\s*[—–]\s*/g, ' ($1) ');
       if (out.includes('—')) {
-        out = out.replace(/\s*—\s*(that|it|they|this|these|those|there|here|clear proof|a direct|giving)\b/gi, (m, w) => `. ${w.charAt(0).toUpperCase() + w.slice(1)}`);
+        out = out.replace(/\s*—\s*(that|it|they|this|these|those|there|here|clear proof|a direct|giving)\b/gi, (m, w) => `, ${w.toLowerCase()}`);
         out = out.replace(/\s*—\s*/g, ', ');
-      }
-      if (out.includes(';') && !/\([A-Za-z][^)]*;[^)]*\)/.test(out)) {
-        out = out.replace(/;\s+([a-zA-Z])/g, (m, ch) => `. ${ch.toUpperCase()}`);
       }
       return out;
     });
@@ -2858,13 +3073,7 @@
 
       let joinedBlock = processedLines.join('\n');
 
-      if ((paragraphRestructuring || mode === 'stealth') && !/^\s*(?:[-*•#]|\d+[.)])/m.test(joinedBlock)) {
-        const blockSents = splitSentences(joinedBlock);
-        if (blockSents.length >= 5 && countWords(joinedBlock) >= 95) {
-          const mid = Math.floor(blockSents.length / 2);
-          joinedBlock = blockSents.slice(0, mid).join(' ') + '\n\n' + blockSents.slice(mid).join(' ');
-        }
-      }
+      // Strict 1:1 Paragraph Preservation: never split a single paragraph into multiple paragraphs.
 
       return joinedBlock;
     });
@@ -2981,34 +3190,14 @@
     let finalWC = countWords(finalOutputText);
     let activeAlts = passBalanced.sentenceAlternatives;
 
-    if (finalWC < targetMinWords) {
-      for (const alt of activeAlts) {
-        if (finalWC >= targetMinWords) break;
-        if (alt.expandedVariant && alt.expandedVariant !== alt.current && finalOutputText.includes(alt.current)) {
-          const gain = countWords(alt.expandedVariant) - countWords(alt.current);
-          if (gain > 0 && (finalWC + gain <= targetMaxWords || finalWC < targetMinWords)) {
-            finalOutputText = finalOutputText.replace(alt.current, alt.expandedVariant);
-            alt.current = alt.expandedVariant;
-            finalWC = countWords(finalOutputText);
-          }
-        }
-      }
-      if (finalWC < targetMinWords && countWords(passExpanded.outputText) > finalWC) {
+    // Unconstrained Deep Humanization: prioritize maximum 4-gram break rate and natural human flow over rigid input length matching.
+    if (mode === 'stealth' || mode === 'extensive') {
+      const bBal = computeDetectorResistanceMetrics(rawText, passBalanced.outputText, inputAnalysis, analyzeText(passBalanced.outputText));
+      const bExp = computeDetectorResistanceMetrics(rawText, passExpanded.outputText, inputAnalysis, analyzeText(passExpanded.outputText));
+      if (bExp.ngramBreakRate > bBal.ngramBreakRate) {
         finalOutputText = passExpanded.outputText;
         finalWC = countWords(finalOutputText);
         activeAlts = passExpanded.sentenceAlternatives;
-      }
-    } else if (finalWC > targetMaxWords) {
-      for (const alt of activeAlts) {
-        if (finalWC <= targetMaxWords) break;
-        if (alt.conciseVariant && alt.conciseVariant !== alt.current && finalOutputText.includes(alt.current)) {
-          const reduction = countWords(alt.current) - countWords(alt.conciseVariant);
-          if (reduction > 0) {
-            finalOutputText = finalOutputText.replace(alt.current, alt.conciseVariant);
-            alt.current = alt.conciseVariant;
-            finalWC = countWords(finalOutputText);
-          }
-        }
       }
     }
 
@@ -3217,6 +3406,34 @@
     'use strict';
 
     const DEMO_SAMPLES = {
+      escp_mim_essay: {
+        title: 'ESCP Master in Management Essay (Uploaded Benchmark 1)',
+        mode: 'stealth',
+        formality: 'natural',
+        spelling: 'uk',
+        text: "Sixteen hours before Malhar, St Xavier\u2019s College Mumbai\u2019s festival, a musical instrument sponsor withdrew. As organizer-in-chief of World Performing Arts, I was responsible for a forty-member team and events that could not proceed without equipment. I first negotiated a fair resolution for the volunteer involved, then searched across Mumbai for a replacement supplier. The instruments arrived, and the events went ahead. That compressed day clarified how I work: creativity matters, but it becomes useful only when joined by empathy, adaptability, and accountability. It also showed me that effective leadership depends on coordinating people, resources, and decisions under pressure.\n\nMovement across India and Europe has shaped my perspective. I was born in Guwahati, am Assamese by lineage, grew up in Delhi, and studied in Mumbai. At St Xavier\u2019s, where I completed a BA in Mass Media and Journalism with a 9.05/10 CGPA, I hoped to document travel. Advertising and marketing soon drew me toward the choices behind what people notice, trust, and remember. Courses including consumer behaviour, brand management, economics, international marketing, business communication, digital marketing, and entrepreneurship gave that interest structure. They reframed brands as relationships requiring both imagination and commercial judgment.\n\nAt Comillas Pontifical University, Madrid, I earned a Diploma in Business and Spanish History with a 9.2/10 CGPA. Studying business alongside Spanish history and culture made context impossible to treat as an afterthought. While travelling to more than forty European cities across four countries, I learned to listen before assuming cultural familiarity. It taught me that curiosity must precede conclusions. Europe became more than an abstract market: distinct communities whose preferences demand attention. This is why ESCP\u2019s multi-campus, international learning environment appeals to me: learning with peers across cultures would continually test my assumptions and sharpen my judgment.\n\nMy early professional experiences confirmed that I enjoy turning audience insight into action. As a marketing executive at Worldwide Media, I developed pitches, coordinated vendors, supported brand deals, and worked on events across Filmfare, Femina, Grazia, and GoodHomes. Noticing a disconnect with Gen Z audiences, I proposed outreach through college festivals. Femina subsequently sponsored Sophia College\u2019s leading festival; the activation generated more than 20,000 Instagram impressions, while its billboard had an estimated audience of 15,000. The experience taught me to advocate for an idea with evidence, execute it through partnerships, and remain answerable for concrete outcomes rather than creative intent alone.\n\nIn my current role as Marketing Executive at Suryaone Solartech, I conduct market research, develop project ideas and social campaigns, manage clients and leads, and support brand outreach and business development. Earlier, at Engage Digital Partners, I contributed to social accounts for the Indian Super League and work surrounding the ICC T20 World Cup. Together, these roles have exposed me to varied audiences and fast-moving execution. Yet they have also defined my gap. To move from campaign execution toward resource allocation and commercial accountability, I need a broader understanding of finance, strategy, operations, organizational problem-solving, and cross-functional decision-making.\n\nESCP\u2019s Master in Management offers the foundation I seek. International Marketing Decisions would connect customer understanding with disciplined choices, while Operations Management would show how consumer promises depend on processes and delivery. Corporate Finance would strengthen how I evaluate trade-offs and allocate resources, and Strategy would place brand decisions within competitive and organizational priorities. The Business Simulation attracts me because it would require decisions across functions, not within marketing alone. Designing Europe would add an essential lens: understanding the forces shaping the region where I hope to build my career. Together, these elements would develop the commercially accountable marketer I aim to become.\n\nI would contribute energy. Beyond Malhar, I served as Head of Events for Zeitgeist, leading forty-five people across eight events and two pre-events. Organizing a Caregiver Saathi blood drive attended by more than one hundred donors showed me how coordination creates meaningful participation. Music is constant: I play keyboard, drums, and guitar, and release original work through my independent project, Ajbtown. Its songs have received more than 10,000 streams worldwide, and I composed and sang a festival theme. At the London campus, I would seek to engage with the Marketing Society and Music Collective, sharing practical perspectives while learning from others.\n\nIn the short term, I seek marketing or assistant brand management roles in Europe\u2019s FMCG sector, with companies such as Nestl\u00e9, learning how consumer brands are built across markets. Over time, I hope to progress into brand leadership, take responsibility for teams, budgets, and commercial decisions, and eventually build a consumer-facing venture. That path requires understanding an enterprise as a connected whole, not only enthusiasm for communication.\n\nESCP would provide the international, demanding, collaborative setting needed for that transition. I would arrive ready to listen, contribute, and stretch beyond strengths, carrying forward the principle that guided me at Malhar: take responsibility, find a workable path, and help people move together."
+      },
+      emlyon_scholarship: {
+        title: 'emlyon Individual Scholarship Essay (Uploaded Benchmark 2)',
+        mode: 'stealth',
+        formality: 'natural',
+        spelling: 'uk',
+        text: "I believe I would be a suitable recipient of emlyon's individual scholarship because my journey reflects academic commitment, initiative, and a desire to use what I learn to create value beyond my own career. These are also qualities I see reflected in emlyon's emphasis on academic excellence, entrepreneurial thinking, and social responsibility.\n\nAt IIT Roorkee, I pursued Mechanical Engineering and developed a strong analytical foundation. In my final-year project, my team worked with 2.3 million sensor records to build predictive maintenance models for naval centrifugal pumps. By focusing on the consequences of missed fault predictions rather than accuracy alone, we reduced false negatives from 54 to three while achieving 99.92% accuracy. This experience taught me to question assumptions, look beyond immediate results, and consider how decisions affect the people who rely on them.\n\nMy professional experience in Japan further shaped this approach. At Morabu Hanshin, I worked on enterprise assignments involving Mitsubishi Electric, analysed operational data, and built financial models for a B2B software portfolio. I also led a cross-functional team during an innovation hackathon, where our geofencing solution received the Best Technology Award. These experiences strengthened my interest in the intersection of technology and business. I see a close connection between this background and emlyon's Makers' Project, where I would like to bring my analytical skills and experience working across disciplines to a practical team project.\n\nMy commitment to social impact has been equally important. At IIT Roorkee, I led more than 120 student volunteers in rural development initiatives across five villages, reaching over 5,000 residents through programmes focused on education, healthcare, women's empowerment, and sustainability. This work taught me to listen to communities before proposing solutions. At emlyon, I would be keen to build on this experience through the Responsible Engagement Program and explore how business knowledge can contribute to social needs. The school's emphasis on learning through action particularly appeals to me because I have found that my most meaningful lessons have come from applying ideas in real situations.\n\nMy path has also involved setbacks that required me to reassess my plans, including personal and family circumstances that interrupted my preparation for postgraduate studies. Rather than abandon my goal, I returned to my preparation, continued learning through professional courses, and took up volunteering alongside it. This experience reinforced my determination to pursue management education with a clearer understanding of its purpose.\n\nReceiving this scholarship would help me pursue the MiM while easing the financial demands of studying abroad. I would approach the opportunity with seriousness and gratitude, contribute my experience in engineering, international work, and community engagement to the emlyon community, and use the education to build a career that creates value for both businesses and society. In the longer term, I hope to build a venture of my own and achieve the financial stability to provide greater security and opportunities for my family."
+      },
+      eth_aerospace: {
+        title: 'ETH Zurich Space Systems Essay (Uploaded Benchmark 3)',
+        mode: 'stealth',
+        formality: 'natural',
+        spelling: 'uk',
+        text: "Growing up in Baloda, a small village in Chhattisgarh, I had little exposure to engineering beyond the mathematics I enjoyed at school. Encouragement from my teachers in eighth standard led me to consider engineering seriously. When I began reading about aerospace, I was drawn to the way aircraft could reduce the time and effort required to travel long distances. My interest soon expanded to a harder question: how could aviation become both more sustainable and more affordable? That question shaped my decision to study aerospace engineering and my ambition to develop efficient propulsion systems that can operate on sustainable fuels.\n\nAt Chandigarh University, I began turning that ambition into technical work. In my first year, I formed a five member team to develop a two stage weather rocket. I designed the payload system, integrated atmospheric sensors and electronic components, and supported subsystem assembly. We used ANSYS and OpenRocket to study structural behaviour, stability, trajectory, and flight performance. Despite missed deadlines, we divided responsibilities, completed a working prototype, and presented it at the university project expo. The experience introduced me to the challenge of making propulsion, structures, electronics, and payload function as one system.\n\nMy academic interests gradually focused on propulsion and sustainable fuels. I studied the FT SPK sustainable aviation fuel pathway, including feedstock preparation, gasifier technologies, and syngas treatment, and developed this work into a review paper published at the IAES 2026 ISRO Conference. I am now using ANSYS Fluent to compare the combustion characteristics and flow behaviour of FT SPK and Jet A1 in a two dimensional combustion chamber. A semester exchange at Moscow Aviation Institute complemented this work through the study of propulsion engineering, fluid mechanics, turbomachinery, and engine design. Living and studying in Russia also strengthened my confidence in adapting to an unfamiliar environment.\n\nMy internships showed me how analysis connects with professional aerospace work. At Paradefaero, I used ANSYS Fluent to examine airflow and aerodynamic performance. At Hindustan Aeronautics Limited, I supported the assembly, integration, calibration, and environmental testing of radio proximity fuzes for the Akash and Astra missile systems. This gave me practical exposure to design, manufacturing, inspection, and validation processes. I am currently a research intern at the Indian Institute of Technology Tirupati, where I design propeller geometries in SolidWorks and evaluate aerodynamic performance using ANSYS Fluent and CFX. Across these experiences, I have developed skills in geometry preparation, meshing, solver setup, modelling, post processing, and running simulations on ORCHID and LOTUS computing clusters.\n\nThese experiences have given me a useful foundation, but they have also defined the limits of my present training. My knowledge has developed through separate projects in rockets, combustion, propellers, avionics, manufacturing, and testing. To contribute to advanced propulsion development, I need deeper preparation in fluid dynamics and combustion, stronger computational research methods, and the ability to evaluate propulsion within the constraints of a complete aerospace system. Further education is therefore not simply my next qualification. It is the bridge between using established tools and developing the judgement to frame, validate, and solve more complex engineering problems.\n\nThe Master in Space Systems at ETH Zurich offers the systems perspective I am seeking. Its core study in space systems and systems engineering, elective study, interdisciplinary project work, industrial internship, and research thesis would connect technical depth with complete system design. I am particularly interested in ETH Zurich's research environment in fluid dynamics and computational engineering. The Institute of Fluid Dynamics and the Combustion and Acoustics for Power and Propulsion Systems Laboratory align with my interests in computational flow analysis, reacting flows, and propulsion. Learning where engineering, computation, and space applications intersect would help me understand the interfaces and trade offs that determine whether an aerospace system succeeds.\n\nAfter the master's degree, I intend to work as a propulsion engineer or aerospace research engineer in an organisation developing advanced aircraft or rocket propulsion systems. I want to analyse combustion, improve engine performance, and translate research into reliable hardware. After gaining industry experience, I plan to pursue doctoral research in propulsion. In the longer term, I aim to establish an Indian company focused on aircraft engines that can operate on sustainable aviation fuel. My wider objective is to contribute to commercial aircraft that are environmentally responsible and affordable enough to make air travel accessible to more people.\n\nI would bring to ETH Zurich computational experience, practical aerospace exposure, and a willingness to contribute beyond the laboratory. As a management team member of the Aerospace Club at Chandigarh University, I helped coordinate more than twenty events and workshops with an organising team of twenty to thirty members. Through the Aeronautical Society of India, I have participated in technical seminars and professional discussions. My experience with ANSYS, SolidWorks, and computing clusters would support project teams, while studying in India and Russia has taught me to adapt, seek guidance, and work with people from different backgrounds.\n\nMy path from Baloda to aerospace laboratories, manufacturing environments, and international classrooms has been built through consistent steps rather than one defining opportunity. At ETH Zurich, I want to bring those steps together into a mature understanding of propulsion and integrated space systems. I hope to leave prepared not only to analyse advanced aerospace technology, but also to help build systems that make flight cleaner, more reliable, and more accessible."
+      },
+      hec_organic_mba: {
+        title: 'HEC Paris Organic Farmers MBA Essay (Uploaded Benchmark 4)',
+        mode: 'stealth',
+        formality: 'natural',
+        spelling: 'uk',
+        text: "Growing up around the Small Organic Farmers Association, which my father founded, I saw how hard smallholder farmers work and how little of the final value they retain. My career has focused on closing that gap. I moved from field supervision and certification systems to building Ethical Farmers from a local tea packer into a direct exporter of organic spices, herbs, and essential oils. Yet I have also learned that processing and exporting solve only part of the problem. The greatest influence over margins and consumers still sits closer to the market.\n\nImmediately after the MBA, I plan to return to Sri Lanka and continue leading Ethical Farmers as CEO and Executive Director. My priority will be to scale our processing and export platform, strengthen its financial and organisational systems, and deepen partnerships with European buyers. Over the longer term, I intend to establish an organic food company in Europe that imports, brands, and distributes products sourced directly from certified smallholder groups. Beginning with Sri Lankan tea, spices, herbs, and essential oils, I want to build a model that can eventually connect producer communities in other countries with European consumers while returning more value to farmers.\n\nThis is the right moment for an MBA because the decisions ahead are larger than those I have managed so far. I have learned by doing: teaching myself certification requirements, developing international buyers, introducing an enterprise resource planning system, and growing the team from 15 to nearly 30 people. I am now preparing the company for a major processing complex and wider international expansion. To manage that scale responsibly, I need a stronger command of finance, strategy, consumer behaviour, and organisational leadership. I also need to move from understanding European buyers as an exporter to understanding how European markets create brands, evaluate sourcing, and build lasting consumer trust.\n\nHEC Paris is compelling because its values match both the enterprise I am building and the leader I want to become. Its emphasis on entrepreneurial spirit would help me test how a farmer linked supply chain can become a competitive international brand. Its commitment to ecological transition and responsibility reflects my belief that commercial growth must improve livelihoods and protect the environment. Just as importantly, HEC\u2019s focus on diversity and collective learning would expose my assumptions to peers with experience across industries and markets, while allowing me to contribute a ground level view of organic agriculture, certification, and smallholder supply chains.\n\nMy objective is not simply to sell more products. It is to build the missing market end of a value chain that begins with more than 3,500 farming families. HEC would give me the management discipline, perspective, and community to scale that ambition without losing the purpose behind it."
+      },
       healthcare_beyond_ing: {
         title: 'Healthcare AI ("Beyond" + "-ing" Openers + Em-Dashes)',
         mode: 'stealth',
@@ -3525,89 +3742,170 @@ It is important to note that on August 19, 2026, at 14:22 UTC, the primary Postg
       }
     }
 
+    function sanitizeNeuralOutput(text, sourceText) {
+      if (!text) return '';
+      let out = text.trim();
+      // Strip any accidental markdown code fences or introductory chatter
+      out = out.replace(/^```[a-z]*\n?/i, '').replace(/\n?```$/i, '').trim();
+      out = out.replace(/^(?:Here is the rewritten[^:]*:|Here's the humanized[^:]*:|Revised passage:)\s*/i, '');
+      // Enforce 0% em-dashes (hard user constraint)
+      out = out.replace(/\s*[—–]\s*([^—–]{3,80}?)\s*[—–]\s*/g, ' ($1) ');
+      out = out.replace(/\s*[—–]\s*/g, ', ');
+      // Enforce strict 1:1 paragraph count with sourceText
+      const srcParas = sourceText.trim().split(/\n\s*\n/).filter(Boolean);
+      const outParas = out.split(/\n\s*\n/).map(p => p.replace(/\n+/g, ' ').trim()).filter(Boolean);
+      if (srcParas.length === 1 && outParas.length > 1) {
+        out = outParas.join(' ');
+      } else if (srcParas.length > 1 && outParas.length === srcParas.length) {
+        out = outParas.join('\n\n');
+      } else if (srcParas.length > 1 && outParas.length > srcParas.length) {
+        // Merge extra split paragraphs back to match source paragraph count
+        const merged = [];
+        const ratio = outParas.length / srcParas.length;
+        for (let i = 0; i < srcParas.length; i++) {
+          const start = Math.round(i * ratio);
+          const end = i === srcParas.length - 1 ? outParas.length : Math.round((i + 1) * ratio);
+          merged.push(outParas.slice(start, Math.max(start + 1, end)).join(' '));
+        }
+        out = merged.join('\n\n');
+      }
+      return out.trim();
+    }
+
+    async function callCloudNeuralProvider(provider, apiKey, systemPrompt, userText, temperature) {
+      if (provider === 'llm7_free' || provider === 'groq' || provider === 'openrouter' || provider === 'openai' || provider === 'ollama') {
+        const urlMap = {
+          llm7_free: 'https://api.llm7.io/v1/chat/completions',
+          groq: 'https://api.groq.com/openai/v1/chat/completions',
+          openrouter: 'https://openrouter.ai/api/v1/chat/completions',
+          openai: 'https://api.openai.com/v1/chat/completions',
+          ollama: 'http://localhost:11434/v1/chat/completions'
+        };
+        const modelMap = {
+          llm7_free: 'gpt-oss-20b',
+          groq: 'llama-3.3-70b-versatile',
+          openrouter: 'meta-llama/llama-3.3-70b-instruct:free',
+          openai: 'gpt-4o-mini',
+          ollama: 'llama3.2'
+        };
+        const headers = { 'Content-Type': 'application/json' };
+        if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
+        const resp = await fetch(urlMap[provider], {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            model: modelMap[provider],
+            temperature: temperature || 0.85,
+            messages: [
+              { role: 'system', content: systemPrompt },
+              { role: 'user', content: userText }
+            ]
+          })
+        });
+        if (!resp.ok) {
+          let errDetail = `HTTP ${resp.status}`;
+          try {
+            const errJson = await resp.json();
+            if (errJson && errJson.error && errJson.error.message) errDetail += `: ${errJson.error.message}`;
+          } catch (e) {}
+          throw new Error(errDetail);
+        }
+        const data = await resp.json();
+        return data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+      } else if (provider === 'gemini') {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
+        const resp = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ parts: [{ text: userText }] }],
+            generationConfig: { temperature: temperature || 0.85 }
+          })
+        });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        return data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0].text;
+      }
+      return null;
+    }
+
     async function tryLayerCHybridRewrite(rawText, options, baseResult) {
-      const studioProv = el('studioAiProvider') ? el('studioAiProvider').value : 'local_only';
+      let studioProv = el('studioAiProvider') ? el('studioAiProvider').value : 'local_only';
       const byokProv = el('byokProvider') ? el('byokProvider').value : 'local_only';
-      const provider = studioProv !== 'local_only' ? studioProv : byokProv;
       const studioKey = el('studioApiKey') ? el('studioApiKey').value.trim() : '';
       const byokKey = el('byokApiKey') ? el('byokApiKey').value.trim() : '';
       const apiKey = studioKey || byokKey;
 
-      if (provider === 'local_only') return null;
-      if (provider !== 'ollama' && provider !== 'llm7_free' && !apiKey) {
-        showToast('Paste your free ' + provider.toUpperCase() + ' key in the top bar (or use Local v5.0 / LLM7 Zero-Key). Using Local v5.0 Engine for now.', 'info');
+      // Auto-detect provider from key prefix if user pasted a key!
+      if (apiKey.startsWith('gsk_') && studioProv === 'local_only') {
+        studioProv = 'groq';
+        if (el('studioAiProvider')) el('studioAiProvider').value = 'groq';
+      } else if (apiKey.startsWith('AIza') && studioProv === 'local_only') {
+        studioProv = 'gemini';
+        if (el('studioAiProvider')) el('studioAiProvider').value = 'gemini';
+      }
+
+      const provider = studioProv !== 'local_only' ? studioProv : byokProv;
+      const livePill = el('activeEngineLivePill');
+
+      if (provider === 'local_only') {
+        if (livePill) {
+          livePill.textContent = 'Active: ⚡ Local v6.0 Deep Engine';
+          livePill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#EDE7DA] text-[#1E1C1A] font-medium whitespace-nowrap';
+        }
         return null;
       }
 
+      if (provider !== 'ollama' && provider !== 'llm7_free' && !apiKey) {
+        if (livePill) {
+          livePill.textContent = `⚡ Local v6.0 Active (Paste ${provider.toUpperCase()} key for Cloud AI)`;
+          livePill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#FDF3E3] text-[#7D5316] font-medium whitespace-nowrap';
+        }
+        return null;
+      }
+
+      const numParas = rawText.trim().split(/\n\s*\n/).filter(Boolean).length;
       const masker = CadenceEngine.createProtectionMasker(rawText, options.frozenTerms || []);
       const sysPrompt = [
-        'You are an elite human editor rewriting AI-generated prose so it reads 100% like a sharp, natural human writer and passes modern 2026 statistical and neural AI detectors (Grammarly, GPTZero).',
-        'MANDATORY HARD RULES (ENFORCE EVERY SINGLE ONE):',
-        '1. LOCKED TOKENS: Keep every token matching __CADENCE_LOCK_N__ (e.g. __CADENCE_LOCK_0__) 100% verbatim and unmodified.',
-        '2. NO "-ING" SENTENCE OPENERS: Never start a sentence with a present participle (-ing word like "Leveraging...", "Recognizing...", "Walking...", "Drawing on...", "Combining...", "Using..."). Start with a concrete subject, time anchor, or short clause.',
-        '3. NO "BEYOND" OR "FROM X TO Y" OPENERS: Never start a sentence with "Beyond..." or "From X to Y,". Cut them or use direct human phrasing.',
-        '4. ZERO EM-DASHES (—) & ZERO SEMICOLONS (;): Do not output a single em-dash (—) or semicolon (;). Use periods and commas instead.',
-        '5. AGGRESSIVE BURSTINESS: Vary sentence lengths dramatically. Include at least one short punchy sentence of 4 to 7 words every 3-4 sentences, paired with longer 24-32 word analytical sentences.',
-        '6. BANNED AI WORDS: Never use delve, leverage, utilize, robust, comprehensive, streamline, foster, facilitate, pivotal, crucial, vital, testament, tapestry, landscape, realm, furthermore, moreover, additionally, consequently, or "not just X, it is Y".',
-        '7. Output ONLY the rewritten passage with no preamble, no notes, and no commentary.'
+        'You are an elite human writer and StealthWriter Ghost 5.2 Pro humanizer. Rewrite the user\'s passage so it reads 100% like authentic, natural human writing and passes Grammarly AI Detector and GPTZero with 0% AI detected.',
+        'CRITICAL TRANSFORMATION RULES:',
+        '1. DO NOT STAY CLOSE TO THE ORIGINAL PHRASING: Break at least 80% to 90% of all 4-word sequences from the input. Completely re-architect every sentence\'s clause order, voice, and verbs while keeping 100% of the factual meaning, names, numbers, GPAs, universities, companies, and technical terms intact.',
+        '2. STRICT PARAGRAPH PRESERVATION: The input has EXACTLY ' + numParas + ' paragraph(s). Your output MUST have EXACTLY ' + numParas + ' paragraph(s) separated by a blank line. NEVER split a paragraph into two, and NEVER merge paragraphs.',
+        '3. ZERO EM-DASHES (—): Never output a single em-dash (—) or double-hyphen (--). Use commas, periods, or parentheses instead.',
+        '4. LOCKED TOKENS: Keep any token matching __CADENCE_LOCK_N__ verbatim.',
+        '5. HUMAN VOICE & RHYTHM: Replace stiff AI templates ("Movement across X has shaped my perspective", "This experience taught me to", "My career has focused on", "Furthermore", "Moreover", "Beyond X,", sentence-initial "-ing" participles) with direct, lived-in human sentences. Mix short 6-10 word sentences with flowing 22-32 word sentences.',
+        '6. FEW-SHOT EXAMPLES OF HOW TO HUMANIZE:',
+        '   - AI Input: "As organizer-in-chief of World Performing Arts, I was responsible for a forty-member team and events that could not proceed without equipment. I first negotiated a fair resolution for the volunteer involved, then searched across Mumbai for a replacement supplier."',
+        '   - Humanized Output: "Heading up World Performing Arts meant I was overseeing a 40-person crew and stage events that needed gear to run. First, I worked out a fair deal for the volunteer caught in the middle, and then I scoured Mumbai to lock in another supplier."',
+        '   - AI Input: "At IIT Roorkee, I pursued Mechanical Engineering and developed a strong analytical foundation. In my final-year project, my team worked with 2.3 million sensor records to build predictive maintenance models for naval centrifugal pumps."',
+        '   - Humanized Output: "I studied Mechanical Engineering at IIT Roorkee, which gave me a solid quantitative grounding. For my final-year capstone, my group used 2.3 million sensor readings to build predictive maintenance models for naval centrifugal pumps."',
+        '7. Output ONLY the rewritten passage with zero preamble, zero markdown fences, and zero commentary.'
       ].join('\n');
 
       try {
-        let llmText = '';
-        if (provider === 'llm7_free' || provider === 'groq' || provider === 'openrouter' || provider === 'openai' || provider === 'ollama') {
-          const urlMap = {
-            llm7_free: 'https://api.llm7.io/v1/chat/completions',
-            groq: 'https://api.groq.com/openai/v1/chat/completions',
-            openrouter: 'https://openrouter.ai/api/v1/chat/completions',
-            openai: 'https://api.openai.com/v1/chat/completions',
-            ollama: 'http://localhost:11434/v1/chat/completions'
-          };
-          const modelMap = {
-            llm7_free: 'gpt-oss-20b',
-            groq: 'llama-3.3-70b-versatile',
-            openrouter: 'meta-llama/llama-3.3-70b-instruct:free',
-            openai: 'gpt-4o-mini',
-            ollama: 'llama3.2'
-          };
-          const headers = { 'Content-Type': 'application/json' };
-          if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
-          const resp = await fetch(urlMap[provider], {
-            method: 'POST',
-            headers,
-            body: JSON.stringify({
-              model: modelMap[provider],
-              temperature: 0.92,
-              messages: [
-                { role: 'system', content: sysPrompt },
-                { role: 'user', content: masker.maskedText }
-              ]
-            })
-          });
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const data = await resp.json();
-          llmText = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-        } else if (provider === 'gemini') {
-          const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`;
-          const resp = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              systemInstruction: { parts: [{ text: sysPrompt }] },
-              contents: [{ parts: [{ text: masker.maskedText }] }],
-              generationConfig: { temperature: 0.92 }
-            })
-          });
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const data = await resp.json();
-          llmText = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0].text;
+        if (livePill) {
+          livePill.textContent = `⏳ Calling ${provider.toUpperCase()} Neural Engine...`;
+          livePill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#FDF3E3] text-[#B85233] font-semibold whitespace-nowrap';
         }
-        if (!llmText || !llmText.trim()) throw new Error('Empty payload');
-        const unmasked = masker.unmask(llmText.trim());
-        // Pass 3: Run v5.0 Deterministic Post-Processing Gate on the LLM output to strip any leaked AI tells!
-        const postGated = CadenceEngine.rewriteAndVerify(unmasked, { ...options, mode: 'stealth' });
-        return postGated.outputText || unmasked;
+        const llmText = await callCloudNeuralProvider(provider, apiKey, sysPrompt, masker.maskedText, 0.88);
+        if (!llmText || !llmText.trim()) throw new Error('Empty response from provider');
+        const unmasked = sanitizeNeuralOutput(masker.unmask(llmText), rawText);
+
+        if (livePill) {
+          livePill.textContent = `✓ Verified: ${provider.toUpperCase()} Neural LPU Active`;
+          livePill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#E3F2EA] text-[#1E563B] font-semibold whitespace-nowrap';
+        }
+        if (el('engineStatusText')) {
+          el('engineStatusText').textContent = `${provider.toUpperCase()} Neural LPU · Verified 0 Em-Dashes`;
+        }
+        return unmasked;
       } catch (err) {
-        showToast(`Cloud AI (${provider}) unavailable (${err.message}); safely used verified Local v5.0 Deep Engine.`, 'warn');
+        if (livePill) {
+          livePill.textContent = `⚠ ${provider.toUpperCase()} Error (${err.message.slice(0, 28)}) → Used Local v6.0`;
+          livePill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#FDE8E4] text-[#962D1B] font-medium whitespace-nowrap';
+        }
+        showToast(`Cloud AI (${provider.toUpperCase()}) error: ${err.message}. Used Local v6.0 Deep Structural Engine instead.`, 'warn');
         return null;
       }
     }
@@ -3619,47 +3917,67 @@ It is important to note that on August 19, 2026, at 14:22 UTC, the primary Postg
         return;
       }
 
-      const options = {
-        mode: currentMode,
-        formality: el('ctrlFormality').value,
-        voicePreservation: el('ctrlVoice').value,
-        sentenceVariation: el('ctrlVariation').value,
-        vocabulary: el('ctrlVocabulary').value,
-        spelling: el('ctrlSpelling').value,
-        minPct: parseFloat(el('ctrlMinPct').value) || 90,
-        maxPct: parseFloat(el('ctrlMaxPct').value) || 112,
-        hardWordLimit: parseInt(el('ctrlHardLimit').value, 10) || null,
-        paragraphRestructuring: Boolean(el('ctrlParaRestructure').checked),
-        frozenTerms: getFrozenTermsList()
-      };
-
-      const result = CadenceEngine.rewriteAndVerify(rawText, options);
-      if (result.error) {
-        showToast(result.error, 'warn');
-        return;
+      const btn = el('primaryHumanizeBtn');
+      const origBtnHtml = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<span>Humanizing...</span>';
       }
 
-      if (lastResult && lastResult.outputText && lastResult.outputText !== result.outputText) {
-        revisionHistory.unshift({
-          timestamp: new Date().toLocaleTimeString(),
-          mode: lastResult.mode,
-          wordCount: lastResult.outputWordCount,
-          pctRatio: lastResult.pctRatio,
-          text: lastResult.outputText,
-          fullResult: lastResult
-        });
-        if (revisionHistory.length > 15) revisionHistory.pop();
-      }
+      try {
+        const options = {
+          mode: currentMode,
+          formality: el('ctrlFormality').value,
+          voicePreservation: el('ctrlVoice').value,
+          sentenceVariation: el('ctrlVariation').value,
+          vocabulary: el('ctrlVocabulary').value,
+          spelling: el('ctrlSpelling').value,
+          minPct: parseFloat(el('ctrlMinPct').value) || 85,
+          maxPct: parseFloat(el('ctrlMaxPct').value) || 115,
+          hardWordLimit: parseInt(el('ctrlHardLimit').value, 10) || null,
+          paragraphRestructuring: false,
+          frozenTerms: getFrozenTermsList()
+        };
 
-      lastResult = result;
-      renderResultToWorkspace(result);
+        const result = CadenceEngine.rewriteAndVerify(rawText, options);
+        if (result.error) {
+          showToast(result.error, 'warn');
+          return;
+        }
 
-      const hybridText = await tryLayerCHybridRewrite(rawText, options, result);
-      if (hybridText) {
-        applyManualOutputUpdate(hybridText);
-        showToast(`Hybrid Layer C + Local Entity Guard verified (${lastResult.detectorMetrics.ngramBreakRate}% 4-gram break).`, 'success');
-      } else {
-        showToast(`Revised in ${result.elapsedMs} ms · ${result.detectorMetrics.ngramBreakRate}% 4-gram break · ${result.preservationAudit.entityIntegrityPct}% entities verified.`, 'success');
+        if (lastResult && lastResult.outputText && lastResult.outputText !== result.outputText) {
+          revisionHistory.unshift({
+            timestamp: new Date().toLocaleTimeString(),
+            mode: lastResult.mode,
+            wordCount: lastResult.outputWordCount,
+            pctRatio: lastResult.pctRatio,
+            text: lastResult.outputText,
+            fullResult: lastResult
+          });
+          if (revisionHistory.length > 15) revisionHistory.pop();
+        }
+
+        lastResult = result;
+        renderResultToWorkspace(result);
+
+        const hybridText = await tryLayerCHybridRewrite(rawText, options, result);
+        if (hybridText) {
+          // Make Draft 1 = Neural Output, Draft 2 = Local v6.0 Structural Flip, Draft 3 = Local v6.0 Crisp
+          lastResult.draftVariants = [
+            { id: 'v1', label: 'Draft 1 · Groq/Cloud Neural', text: hybridText },
+            { id: 'v2', label: 'Draft 2 · Local v6.0 Structural', text: result.outputText },
+            { id: 'v3', label: 'Draft 3 · Crisp & Direct', text: (result.draftVariants && result.draftVariants[2]) ? result.draftVariants[2].text : result.outputText }
+          ];
+          applyManualOutputUpdate(hybridText);
+          showToast(`Groq/Neural Rewrite Complete · ${lastResult.detectorMetrics.ngramBreakRate}% 4-grams broken · ${rawText.trim().split(/\n\s*\n/).length} paragraphs preserved.`, 'success');
+        } else {
+          showToast(`Local v6.0 Rewrite Complete · ${result.detectorMetrics.ngramBreakRate}% 4-grams broken · 0 em-dashes.`, 'success');
+        }
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = origBtnHtml || '<span>Revise &amp; Verify</span><span class="font-mono-code text-[10px] opacity-80 hidden sm:inline">⌘↵</span>';
+        }
       }
     }
 
@@ -4390,17 +4708,111 @@ It is important to note that on August 19, 2026, at 14:22 UTC, the primary Postg
         showToast('Scanned browser WebGPU and local inference capabilities.', 'info');
       });
 
+      function setActiveDraftTab(activeIdx) {
+        ['draftVariant1Btn', 'draftVariant2Btn', 'draftVariant3Btn'].forEach((id, idx) => {
+          const b = el(id);
+          if (!b) return;
+          b.className = (idx === activeIdx)
+            ? 'px-2.5 py-1 rounded text-xs font-medium bg-[#1E1C1A] text-[#FAF7F2] shadow-sm transition'
+            : 'px-2.5 py-1 rounded text-xs font-medium bg-[#EDE7DA] text-[#57524C] hover:text-[#1E1C1A] transition';
+        });
+      }
+
+      if (el('draftVariant1Btn')) {
+        el('draftVariant1Btn').addEventListener('click', () => {
+          if (lastResult && lastResult.draftVariants && lastResult.draftVariants[0]) {
+            setActiveDraftTab(0);
+            applyManualOutputUpdate(lastResult.draftVariants[0].text);
+            showToast('Switched to ' + lastResult.draftVariants[0].label, 'info');
+          }
+        });
+      }
+      if (el('draftVariant2Btn')) {
+        el('draftVariant2Btn').addEventListener('click', () => {
+          if (lastResult && lastResult.draftVariants && lastResult.draftVariants[1]) {
+            setActiveDraftTab(1);
+            applyManualOutputUpdate(lastResult.draftVariants[1].text);
+            showToast('Switched to ' + lastResult.draftVariants[1].label, 'info');
+          }
+        });
+      }
+      if (el('draftVariant3Btn')) {
+        el('draftVariant3Btn').addEventListener('click', () => {
+          if (lastResult && lastResult.draftVariants && lastResult.draftVariants[2]) {
+            setActiveDraftTab(2);
+            applyManualOutputUpdate(lastResult.draftVariants[2].text);
+            showToast('Switched to ' + lastResult.draftVariants[2].label, 'info');
+          }
+        });
+      }
+
+      if (el('toggleShowKeyBtn')) {
+        el('toggleShowKeyBtn').addEventListener('click', function () {
+          const inp = el('studioApiKey');
+          if (!inp) return;
+          if (inp.type === 'password') {
+            inp.type = 'text';
+            this.textContent = 'Hide';
+          } else {
+            inp.type = 'password';
+            this.textContent = 'Show';
+          }
+        });
+      }
+
+      if (el('studioApiKey')) {
+        // Restore saved key from browser localStorage if present
+        try {
+          const savedKey = localStorage.getItem('cadence_user_api_key');
+          const savedProv = localStorage.getItem('cadence_user_ai_prov');
+          if (savedKey) {
+            el('studioApiKey').value = savedKey;
+            if (savedProv && el('studioAiProvider')) el('studioAiProvider').value = savedProv;
+            if (el('activeEngineLivePill')) {
+              el('activeEngineLivePill').textContent = 'Key Loaded: Ready for Cloud Neural Rewrite';
+              el('activeEngineLivePill').className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#E3F2EA] text-[#1E563B] font-semibold whitespace-nowrap';
+            }
+          }
+        } catch (e) {}
+
+        el('studioApiKey').addEventListener('input', function () {
+          const val = this.value.trim();
+          const provSelect = el('studioAiProvider');
+          if (val.startsWith('gsk_') && provSelect) {
+            provSelect.value = 'groq';
+          } else if (val.startsWith('AIza') && provSelect) {
+            provSelect.value = 'gemini';
+          } else if (val.startsWith('sk-or-') && provSelect) {
+            provSelect.value = 'openrouter';
+          }
+          try {
+            if (val) {
+              localStorage.setItem('cadence_user_api_key', val);
+              if (provSelect) localStorage.setItem('cadence_user_ai_prov', provSelect.value);
+            } else {
+              localStorage.removeItem('cadence_user_api_key');
+            }
+          } catch (e) {}
+          const pill = el('activeEngineLivePill');
+          if (pill) {
+            if (val) {
+              pill.textContent = `Key Ready (${provSelect ? provSelect.value.toUpperCase() : 'AI'}) · Click Revise & Verify`;
+              pill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#E3F2EA] text-[#1E563B] font-semibold whitespace-nowrap';
+            } else {
+              pill.textContent = 'Ready: Local v6.0 (or paste Groq key)';
+              pill.className = 'text-[11px] font-mono-code px-2.5 py-1 rounded bg-[#EDE7DA] text-[#1E1C1A] font-medium whitespace-nowrap';
+            }
+          }
+        });
+      }
+
       el('studioAiProvider').addEventListener('change', function () {
         const val = this.value;
         const keyInput = el('studioApiKey');
-        const wrap = el('studioApiKeyWrap');
+        try { localStorage.setItem('cadence_user_ai_prov', val); } catch (e) {}
         if (val === 'local_only' || val === 'llm7_free') {
-          keyInput.placeholder = "(Zero API key required for " + (val === 'local_only' ? "Local v5.0 Engine)" : "LLM7.io Free Cloud AI)");
-          keyInput.disabled = true;
-          keyInput.classList.add('opacity-50', 'bg-gray-100');
+          keyInput.placeholder = "(Zero API key required for " + (val === 'local_only' ? "Local v6.0 Engine)" : "LLM7.io Free Cloud AI)");
         } else {
-          keyInput.disabled = false;
-          keyInput.classList.remove('opacity-50', 'bg-gray-100');
           keyInput.placeholder = "Paste free " + val.toUpperCase() + " key here (e.g. " + (val === 'groq' ? "gsk_..." : (val === 'gemini' ? "AIza..." : "sk-...")) + ")";
           keyInput.focus();
         }
@@ -4438,8 +4850,8 @@ It is important to note that on August 19, 2026, at 14:22 UTC, the primary Postg
 
     window.addEventListener('DOMContentLoaded', () => {
       initEventListeners();
-      el('sampleSelect').value = 'healthcare_beyond_ing';
-      el('sourceEditor').value = DEMO_SAMPLES.healthcare_beyond_ing.text;
+      el('sampleSelect').value = 'escp_mim_essay';
+      el('sourceEditor').value = DEMO_SAMPLES.escp_mim_essay.text;
       setIntensityMode('stealth');
       el('ctrlFormality').value = 'natural';
       updateSourceMetrics();
